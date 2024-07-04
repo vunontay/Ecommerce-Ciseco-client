@@ -36,12 +36,6 @@ export const ROUTE = {
 
     // PRODUCTS
     PRODUCT_COLLECTION: "/collection",
-
-    // ORDER
-    ORDER: "/orders/",
-
-    // PAYMENTS
-    PAYMENT_ONLINE: "/payment_online",
 };
 
 export const API_URL = {
@@ -65,6 +59,12 @@ export const API_URL = {
     // Categories
 
     CATEGORY: "/categorys",
+
+    // ORDER
+    ORDER: "/orders/",
+
+    // PAYMENTS
+    PAYMENT_ONLINE: "/payment_online",
 };
 
 export const PAYMENTS_METHOD = {
