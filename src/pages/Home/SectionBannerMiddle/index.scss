@@ -1,0 +1,119 @@
+@import "../../../styles/abstracts/";
+
+.banner-middle {
+      margin: 9.6rem 0;
+
+      @include breakpoint(lg) {
+            padding-top: 4rem;
+            margin-top: 12.8rem;
+      }
+
+      &__logo {
+            @include box(11.2rem, 4rem);
+
+            img {
+                  @include box(100%, 100%);
+            }
+      }
+
+      &__wrapper {
+            @include flex(null, null, column, null);
+            position: relative;
+            border-radius: 1rem;
+            padding: 1rem;
+            padding-bottom: 0;
+            background-color: $yellow-100;
+
+            @include breakpoint(sm) {
+                  padding: 2rem;
+                  border-radius: 4rem;
+                  padding-bottom: 0;
+            }
+
+            @include breakpoint(lg) {
+                  padding: 9.6rem;
+                  justify-content: flex-end;
+                  flex-direction: row;
+            }
+      }
+
+      &__background-svg {
+            @include position(absolute, null, null, null, null);
+            @include box(100%, 100%);
+            inset: 0px;
+            color: transparent;
+
+            img {
+                  @include box(100%, 100%);
+                  vertical-align: middle;
+            }
+      }
+
+      &__content {
+            max-width: 50rem;
+            position: relative;
+
+            @include breakpoint(lg) {
+                  width: 45%;
+            }
+
+            h2 {
+                  margin-top: 1.5rem;
+                  @include text(3rem, 600, $black, 4rem);
+                  letter-spacing: -.025em;
+
+                  @include breakpoint(sm) {
+                        margin-top: 4rem;
+                        font-size: 3.6rem;
+                  }
+
+                  @include breakpoint(xl) {
+                        margin-top: 4rem;
+                        font-size: 4.8rem;
+                        line-height: 5.4rem;
+                  }
+            }
+
+            p {
+                  margin-top: 1.5rem;
+                  @include text(1.6rem, 400, $grey-700);
+
+                  @include breakpoint(sm) {
+                        margin-top: 2.4rem;
+
+                  }
+
+                  @include breakpoint(xl) {
+                        font-size: 1.4rem;
+                  }
+            }
+
+            button {
+                  margin-top: 1.5rem;
+                  padding: 1rem 3rem;
+                  @include text(1.6rem, 500, $white);
+
+                  @include breakpoint(sm) {
+                        margin-top: 4.8rem;
+                  }
+            }
+      }
+
+      &__background {
+            position: relative;
+            margin-top: 4rem;
+            min-width: 36rem;
+
+            @include breakpoint(lg) {
+                  max-width: calc(55% - 4rem);
+                  margin-top: 0;
+                  @include position(absolute, null, null, 0, 0);
+            }
+
+            img {
+                  max-width: 100%;
+                  height: auto;
+                  vertical-align: middle;
+            }
+      }
+}

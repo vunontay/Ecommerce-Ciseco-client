@@ -1,0 +1,63 @@
+@import "../../../styles/abstracts/";
+
+.tabs {
+      .tabs__menu {
+            position: relative;
+            @include flex(null, center, null, null);
+
+            .tabs__menu--list {
+                  @include flex(null, center, null, null);
+                  width: 100%;
+                  position: relative;
+            }
+
+            .tabs__menu--item {
+                  text-align: center;
+                  padding: 2rem 0;
+                  cursor: pointer;
+                  position: relative;
+                  transition: color 0.3s ease;
+                  @include text(1.4rem, 400, $grey-600, 2rem);
+
+                  @include breakpoint(md) {
+                        @include text(1.6rem, 400, $grey-600, 2.4rem);
+                  }
+
+                  &:not(&:first-child) {
+                        margin-left: 3.2rem;
+
+                        @include breakpoint(md) {
+                              margin-left: 5.6rem;
+                        }
+                  }
+
+                  @include breakpoint(md) {
+                        padding: 3.2rem 0;
+                  }
+
+                  &.active {
+                        color: $black;
+                  }
+
+                  &.active::after {
+                        @include position(absolute, null, 0, -0.2rem, 0);
+                        content: "";
+                        height: 0.1rem;
+                        background: $blue-650;
+                        animation: slideBorder 0.3s ease forwards;
+                  }
+            }
+      }
+
+      @keyframes slideBorder {
+            from {
+                  left: 50%;
+                  width: 0;
+            }
+
+            to {
+                  left: 0;
+                  width: 100%;
+            }
+      }
+}

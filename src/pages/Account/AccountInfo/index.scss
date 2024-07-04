@@ -1,0 +1,11 @@
+@import "../../../styles/abstracts/";
+
+.account-info {
+      &>h2 {
+            @include text(2.4rem, 600, $black, 3.2rem);
+
+            @include breakpoint(sm) {
+                  @include text(3rem, 600, $black, 3.6rem);
+            }
+      }
+}

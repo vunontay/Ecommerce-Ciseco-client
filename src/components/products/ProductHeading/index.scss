@@ -1,0 +1,42 @@
+@import "../../../styles/abstracts/";
+
+.product-heading {
+      max-width: 64rem;
+      list-style: none;
+      @include flex(null, center, null, null);
+
+      &__item {
+            display: flex;
+            align-items: center;
+
+
+            h2 {
+                  @include breakpoint(lg) {
+                        @include text(3.6rem, 600, $black, 4rem);
+                  }
+            }
+
+
+            &+&::before {
+                  content: "/";
+                  margin: 0 0.5rem;
+                  color: #6c757d;
+            }
+
+
+            a {
+                  color: #007bff;
+                  text-decoration: none;
+
+                  &:hover {
+                        color: #0056b3;
+                        text-decoration: underline;
+                  }
+            }
+
+
+            &.active {
+                  color: #6c757d;
+            }
+      }
+}

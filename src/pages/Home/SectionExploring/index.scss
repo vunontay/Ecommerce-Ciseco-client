@@ -1,0 +1,166 @@
+@import "../../../styles/abstracts/";
+
+.exploring {
+      background-color: $grey-400;
+      padding: 6rem 0;
+
+      @include breakpoint(lg) {
+            padding: 8rem 0;
+      }
+
+      &__heading {
+            margin-bottom: 5.6rem;
+
+            h2 {
+                  text-align: center;
+                  @include text(3rem, 600, $black);
+
+                  @include breakpoint(sm) {
+                        font-size: 3.6rem;
+                  }
+
+                  @include breakpoint(xl) {
+                        font-size: 4.8rem;
+                  }
+            }
+      }
+
+      &__categories {
+            @include flex(center, center, null, null);
+            width: 100%;
+            margin-bottom: 3rem;
+
+            @include breakpoint(lg) {
+                  margin-bottom: 3.5rem;
+            }
+
+            &-list {
+                  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, .1), 0 4px 6px -4px rgba(0, 0, 0, .1);
+                  padding: 0.25rem;
+                  border-radius: 9999px;
+                  @include flex(null, center, null, null);
+                  overflow-x: auto;
+            }
+
+            &-item {
+                  cursor: pointer;
+                  text-transform: capitalize;
+                  @include flex(null, center, null, 1rem);
+                  padding: 0.8rem 1.4rem;
+
+                  @include breakpoint(sm) {
+                        padding: 1.2rem 2.8rem;
+                  }
+
+                  a,
+                  svg {
+                        @include text(1.5rem, 500, $grey-650, 1);
+                  }
+
+                  &:hover a,
+                  &:hover svg {
+                        color: $grey-800;
+                        transition: 0.2s;
+                  }
+            }
+      }
+
+      &__cards {
+            @include grid(repeat(1, minmax(0, 1fr)), null, 1rem);
+
+            @include breakpoint(md) {
+                  gap: 1.75rem;
+                  grid-template-columns: repeat(2, minmax(0, 1fr));
+            }
+
+            @include breakpoint(lg) {
+                  grid-template-columns: repeat(3, minmax(0, 1fr));
+            }
+
+            &-item {
+                  cursor: pointer;
+                  transition-property: box-shadow;
+                  transition-timing-function: cubic-bezier(.4, 0, .2, 1);
+                  transition-duration: .15s;
+                  border-radius: 1.5rem;
+                  overflow: hidden;
+                  position: relative;
+
+                  .background {
+                        @include position(absolute, null, 0, 0, null);
+                        max-width: 28rem;
+                        opacity: 0.8;
+
+                        img {
+                              max-width: 100%;
+                              height: auto;
+                              vertical-align: middle;
+                        }
+                  }
+
+                  .card {
+                        @include flex(space-between, null, column, null);
+                        inset: 1.25rem;
+                        background-color: $white;
+                        padding: 2.6rem;
+
+                        @include breakpoint(sm) {
+                              inset: 2rem;
+                        }
+
+                        &__top {
+                              @include flex(space-between, center, null, null);
+
+                              span {
+                                    @include text(1.2rem, 400, $black);
+                              }
+                        }
+
+                        &__img {
+                              border-radius: 9999px;
+                              @include box(8rem, 8rem);
+                              overflow: hidden;
+
+                              img {
+                                    @include box(100%, 100%);
+                              }
+                        }
+
+                        &__title {
+                              margin: 2rem 0;
+
+                              @include respond(tablet) {
+                                    margin: 7rem 0;
+                              }
+
+                              span {
+                                    margin-bottom: 1rem;
+                                    @include text(1.4rem, 400, $grey-600);
+                              }
+
+                              h2 {
+                                    @include text(3rem, 600, $black);
+                              }
+
+                        }
+
+                        &__button {
+                              @include flex(null, center, null, 1rem);
+                              cursor: pointer;
+                              @include text(1.4rem, 500, $black);
+
+                              &:hover {
+                                    color: $blue-650;
+                              }
+                        }
+
+                  }
+
+                  &:hover {
+                        transition: 0.25s ease-in;
+                        box-shadow: 0 13px 18px -0px rgba(0, 0, 0, 0.1),
+                              0 7px 9px -1px rgba(0, 0, 0, 0.1);
+                  }
+            }
+      }
+}

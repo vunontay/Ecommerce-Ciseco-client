@@ -1,0 +1,89 @@
+//[BASE]
+@mixin flex($justify-content: normal,
+      $align-items: normal,
+      $direction: row,
+      $gap: 0) {
+      display: flex;
+      justify-content: $justify-content;
+      align-items: $align-items;
+      flex-direction: $direction;
+      gap: $gap;
+}
+
+@mixin text($font-size,
+      $font-weight,
+      $color: $grey-600,
+      $line-height: 1.6) {
+      font-size: $font-size;
+      font-weight: $font-weight;
+      color: $color;
+      line-height: $line-height;
+}
+
+@mixin grid($template-columns, $template-rows, $gap: 0) {
+      display: grid;
+      grid-template-columns: $template-columns;
+      grid-template-rows: $template-rows;
+      grid-gap: $gap;
+}
+
+@mixin image($object-fit, $width, $height) {
+      object-fit: $object-fit;
+      width: $width;
+      height: $height;
+}
+
+@mixin bg-image($url, $width, $height, $size) {
+      width: $width;
+      height: $height;
+      background-image: url($url);
+      background-position: center center;
+      background-repeat: no-repeat;
+      background-size: $size;
+}
+
+@mixin box($width, $height) {
+      width: $width;
+      height: $height;
+}
+
+@mixin position($position, $top: 0, $right: 0, $bottom: 0, $left: 0) {
+      position: $position;
+      top: $top;
+      right: $right;
+      bottom: $bottom;
+      left: $left;
+}
+
+@mixin active-btn() {
+      transition: translate 0s;
+      transform: translateY(0.2rem);
+}
+
+
+//[RESPONSIVE]
+@mixin respond($breakpoint) {
+      @if $breakpoint ==large-mobile {
+            @media only screen and (min-width: 640px) {
+                  @content;
+            }
+      }
+
+      @if $breakpoint ==tablet {
+            @media only screen and (min-width: 768px) {
+                  @content;
+            }
+      }
+
+      @if $breakpoint ==desktop {
+            @media only screen and (min-width: 1024px) {
+                  @content;
+            }
+      }
+
+      @if $breakpoint ==large-desktop {
+            @media only screen and (min-width: 1280px) {
+                  @content;
+            }
+      }
+}

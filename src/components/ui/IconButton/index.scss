@@ -1,0 +1,37 @@
+@import "../../../styles/abstracts/";
+
+
+.icon__btn {
+      border: 0;
+      border-radius: 50%;
+      padding: 1rem;
+      font-size: 1.5rem;
+      color: $black-300;
+      background: $white;
+      transition: background-color 150ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
+      border: 0.1rem solid $grey-450;
+      @include box(4rem, 4rem);
+      cursor: pointer;
+
+      svg {
+            margin-left: 0;
+            display: inline-flex;
+            vertical-align: middle;
+            flex-shrink: 0;
+            @include box(100%, 100%);
+            font-size: 2.2rem;
+      }
+
+      &:hover {
+            background-color: $grey-450;
+            transition: 0.2s ease-in;
+      }
+
+      &:disabled {
+            color: $black-100;
+            opacity: 0.6;
+            cursor: not-allowed;
+            background-color: $btn-outline-grey;
+            transition: opacity 0.3s ease;
+      }
+}

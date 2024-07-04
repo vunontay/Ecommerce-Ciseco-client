@@ -1,0 +1,84 @@
+@import '../../../styles/abstracts/index';
+
+.select-box {
+      position: relative;
+      cursor: default;
+      width: 100%;
+      @include flex(space-between, center, null, null);
+
+      &__options {
+            border: 0.1rem solid $grey-450;
+            border-top: 0;
+            border-bottom-left-radius: 0.8rem;
+            border-bottom-right-radius: 0.8rem;
+            background-color: $white;
+            z-index: 100;
+            display: none;
+            overflow: hidden;
+            @include position(absolute, 100%, null, null, null);
+            width: 100%;
+            z-index: 1000;
+            overflow-y: auto;
+
+
+            &::-webkit-scrollbar {
+                  width: 0.8rem;
+                  appearance: none;
+            }
+
+            &::-webkit-scrollbar-track {
+                  background: $grey-100;
+                  z-index: 1;
+                  border-bottom-right-radius: 0.8rem;
+
+            }
+
+            &::-webkit-scrollbar-thumb {
+                  background: $blue-650;
+                  border-radius: 2rem;
+                  cursor: pointer;
+                  height: 4rem;
+            }
+
+            &.open {
+                  display: block;
+                  animation: slideIn 0.3s ease forwards;
+            }
+
+            &.error {
+                  border-color: $red;
+                  top: 50%;
+                  margin-top: 0.8rem;
+            }
+      }
+
+      &__option {
+            @include text(1.4rem, 400, $black, null);
+            cursor: pointer;
+            padding: 1.2rem 1.4rem;
+
+
+            &:hover {
+                  background-color: $grey-100;
+            }
+      }
+
+      &__not-found {
+            @include flex(center, center, null, 0.5rem);
+            padding: 1.2rem 1.4rem;
+            text-transform: capitalize;
+            transition: 0.3s ease;
+      }
+
+      @keyframes slideIn {
+            from {
+                  max-height: 0;
+                  opacity: 0;
+            }
+
+            to {
+                  max-height: 14rem;
+                  opacity: 1;
+            }
+      }
+}

@@ -1,0 +1,14 @@
+@import "../../../styles/abstracts/";
+
+.checkout-payment {
+      &__title {
+            @include text(1.8rem, 600, $black, 2.8rem);
+      }
+
+      &__list {
+            margin-top: 3.2rem;
+            max-height: 40rem;
+            overflow-y: scroll;
+            scrollbar-width: none;
+      }
+}

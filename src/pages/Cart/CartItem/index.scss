@@ -1,0 +1,113 @@
+@import "../../../styles/abstracts/";
+
+.cart-item {
+      display: flex;
+      position: relative;
+
+
+      &__img {
+            background-color: #f1f5f9;
+            flex-shrink: 0;
+            @include box(9.6rem, 14.4rem);
+            position: relative;
+
+            @include breakpoint(sm) {
+                  width: 12.8rem;
+            }
+
+            img {
+                  position: absolute;
+                  @include box(100%, 100%);
+                  inset: 0px;
+                  object-fit: cover;
+                  object-position: center;
+            }
+      }
+
+      &__content {
+            @include flex(null, null, column, null);
+            flex: 1 1 0%;
+            margin-left: 1.2rem;
+
+            @include breakpoint(sm) {
+                  margin-left: 2.4rem;
+            }
+      }
+
+      &__top {
+            @include flex(space-between, null, null, null);
+            width: 100%;
+            flex-wrap: wrap;
+      }
+
+      &__info {
+            width: 50%;
+
+            h3 {
+                  @include text(1.6rem, 600, $black, 2.4rem);
+            }
+
+            &--sub {
+                  @include text(1.4rem, 400, $grey-800, 2rem);
+                  display: flex;
+                  margin-top: 0.6rem;
+
+                  @include breakpoint(sm) {
+                        margin-top: 1rem;
+                  }
+
+                  .sub-item {
+                        @include flex(null, center, null, 0.6rem);
+                  }
+
+                  span {
+                        border-right: 0.1rem solid $grey-500;
+                        margin: 0 1.6rem;
+                  }
+            }
+      }
+
+      &__price {
+            @include breakpoint(sm) {
+                  display: flex;
+            }
+
+            flex: 1 1 0%;
+            justify-content: flex-end;
+
+            span {
+                  @include flex(center, center, null, null);
+                  border: 0.2rem solid $green-600;
+                  border-radius: 1rem;
+                  @include box(auto, 3rem);
+                  @include text(1.4rem, 500, $green-600, null);
+                  text-align: center;
+
+                  @include breakpoint(md) {
+                        padding: 0.6rem 1rem;
+                  }
+            }
+      }
+
+      &__bottom {
+            padding-top: 1.6rem;
+            margin-top: auto;
+            @include flex(space-between, flex-end, null, null);
+
+            button {
+                  padding: 0.6rem 1rem;
+                  border-radius: 99999px;
+                  border: 0.1rem solid $grey-500;
+                  @include flex(center, center, null, 0.4rem);
+            }
+      }
+
+      &__remove {
+            @include text(1.4rem, 500, $blue-600, 2rem);
+            cursor: pointer;
+
+            &:hover {
+                  color: $blue-500;
+            }
+      }
+}

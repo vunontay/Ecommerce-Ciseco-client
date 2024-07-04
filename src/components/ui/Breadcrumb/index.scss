@@ -1,0 +1,18 @@
+@import "../../../styles/abstracts/";
+
+.breadcrumb {
+
+      h2 {
+            @include flex(null, center, null, 0.4rem);
+            text-transform: capitalize;
+
+            &>span,
+            a {
+                  @include text(2.4rem, 600, $black, 3.2rem);
+
+                  @include breakpoint(lg) {
+                        @include text(3.6rem, 600, $black, 4rem);
+                  }
+            }
+      }
+}

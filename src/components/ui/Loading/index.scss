@@ -1,0 +1,16 @@
+@import "../../../styles/abstracts/";
+
+.loading {
+      position: fixed;
+      z-index: 20;
+      inset: 0px;
+      background-color: rgba(0, 0, 0, 0.4);
+      @include flex(center, center, null, null);
+      @include box(100%, 100%);
+
+      svg {
+
+            @include box(10rem, 10rem);
+            color: $white;
+      }
+}

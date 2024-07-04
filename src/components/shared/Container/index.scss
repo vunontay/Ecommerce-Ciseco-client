@@ -1,0 +1,29 @@
+@import "../../../styles/abstracts/";
+
+.container {
+      width: 100%;
+      margin: 0 auto;
+      padding: 0 1rem;
+
+      @include breakpoint(sm) {
+            max-width: 64rem;
+      }
+
+      @include breakpoint(md) {
+            max-width: 76.8rem;
+      }
+
+      @include breakpoint(lg) {
+            max-width: 102.4rem;
+      }
+
+      @include breakpoint(xl) {
+            max-width: 128.0rem;
+            padding: 0 4rem;
+      }
+
+      @include breakpoint(xxl) {
+            max-width: 153.6rem;
+            padding: 0 12.8rem;
+      }
+}

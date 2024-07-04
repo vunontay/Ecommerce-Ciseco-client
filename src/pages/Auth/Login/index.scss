@@ -1,0 +1,62 @@
+@import "../../../styles/abstracts/";
+
+.login {
+
+      max-width: 50rem;
+      margin-left: auto;
+      margin-right: auto;
+      margin-bottom: 6rem;
+
+      @include breakpoint (lg) {
+            margin-bottom: 8rem;
+      }
+
+      @include flex(center, center, column, null);
+
+      h2 {
+            @include text(5rem, 600, $black);
+            text-align: center;
+            margin: 4rem 0;
+            width: 100%;
+      }
+
+      &__form {
+            width: 100%;
+      }
+
+      &__field {
+            margin: 2rem 0;
+      }
+
+      .form_btn {
+            width: 100%;
+            background-color: #f0f9ff;
+            @include text(1.4rem, 400, $black);
+            text-align: center;
+            border-radius: 1rem;
+            padding: 0.5rem 1rem;
+            margin: 1rem 0;
+
+            &:hover {
+                  background-color: #d2eafa;
+                  transition: 0.2s ease-in;
+            }
+      }
+
+      &__btn {
+            @include text(1.6rem, 500, $white);
+            letter-spacing: 0.04rem;
+            padding: 1rem;
+            margin: 1rem 0;
+            width: 100%;
+      }
+
+      p {
+            @include text(1.4rem, 400, $black);
+
+
+            a {
+                  @include text(1.4rem, 400, #41a360);
+            }
+      }
+}

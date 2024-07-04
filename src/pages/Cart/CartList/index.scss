@@ -1,0 +1,20 @@
+@import "../../../styles/abstracts/";
+
+.cart-list {
+      &__item {
+            padding: 3.2rem 0;
+            border-bottom: 0.1rem solid $grey-500;
+
+            &:first-child {
+                  padding-top: 0;
+            }
+
+            @include breakpoint(sm) {
+                  padding: 4rem 0;
+            }
+
+            @include breakpoint(xl) {
+                  padding: 4.8rem 0;
+            }
+      }
+}

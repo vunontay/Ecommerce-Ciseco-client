@@ -1,0 +1,221 @@
+@import "../../styles/abstracts/";
+
+.about-page {
+      position: relative;
+      overflow: hidden;
+
+      &__background {
+            @include position(absolute, null, 0, null, 0);
+            display: flex;
+            z-index: 0;
+            min-height: 0;
+            overflow: hidden;
+            padding: 9.6rem 0 9.6rem 8rem;
+
+            @include breakpoint(md) {
+                  top: 4rem;
+            }
+
+            &>span {
+
+                  &:first-child,
+                  &:last-child {
+                        display: block;
+                        border-radius: 9999px;
+                        opacity: .1;
+                        mix-blend-mode: multiply;
+                        filter: blur(6.4rem);
+                        @include box(28.8rem, 28.8rem);
+
+                        @include breakpoint(lg) {
+                              @include box(38.4rem, 38.4rem);
+                        }
+                  }
+
+                  &:first-child {
+                        background-color: #ef233c;
+                  }
+
+                  &:last-child {
+                        background-color: #04868b;
+                        margin-top: 16rem;
+                        margin-left: -8rem;
+                  }
+            }
+      }
+
+      &__main {
+            padding-top: 6.4rem;
+            padding-bottom: 6.4rem;
+
+            @include breakpoint(lg) {
+                  padding-top: 11.2rem;
+                  padding-bottom: 11.2rem;
+            }
+      }
+
+      &__hero {
+            position: relative;
+            @include flex(null, center, column, null);
+            text-align: center;
+            position: relative;
+
+            @include breakpoint(lg) {
+                  text-align: left;
+                  flex-direction: row;
+            }
+
+            &--content {
+                  width: 100vw;
+                  max-width: 100%;
+
+                  @include breakpoint(xl) {
+                        max-width: 51.2rem;
+                  }
+
+                  &>h2 {
+                        @include text(3rem, 600, $black, 3.6rem);
+
+                        @include breakpoint(md) {
+                              @include text(3.6rem, 600, $black, 4rem);
+                        }
+
+                        @include breakpoint(xl) {
+                              @include text(4.8rem, 600, $black, 1.25);
+                        }
+                  }
+
+                  &>span {
+                        @include text(1.6rem, 400, $grey-800, 2.4rem);
+                        margin-top: 2rem;
+                        display: block;
+
+                        @include breakpoint(lg) {
+                              margin-top: 2.8rem;
+                        }
+
+                        @include breakpoint(xl) {
+                              @include text(1.8rem, 400, $grey-800, 2.8rem);
+                        }
+                  }
+            }
+
+            &--img {
+                  flex-grow: 1;
+                  margin-left: 0;
+                  margin-top: 5.6rem;
+
+                  @include breakpoint(lg) {
+                        margin-left: 4rem;
+                        margin-top: 0;
+                  }
+
+                  img {
+                        @include box(100%, auto);
+                        max-width: 100%;
+                        vertical-align: middle;
+                  }
+            }
+      }
+
+      &__founder {
+            position: relative;
+            margin-top: 6.4rem;
+
+            @include breakpoint(lg) {
+                  margin-top: 11.2rem;
+            }
+
+            &--heading {
+                  margin-bottom: 4.8rem;
+                  @include flex(space-between, null, column, null);
+
+                  @include breakpoint(sm) {
+                        flex-direction: row;
+                        align-items: flex-end
+                  }
+
+                  h2 {
+                        @include text(3rem, 600, $black, 3.6rem);
+
+                        @include breakpoint(md) {
+                              @include text(3.6rem, 600, $black, 4rem);
+
+                        }
+                  }
+
+                  span {
+                        @include text(1.6rem, 400, $grey-800, 2.4rem);
+                        display: block;
+
+                        @include breakpoint(sm) {
+                              @include text(2rem, 400, $grey-800, 2.8rem);
+                        }
+
+                        @include breakpoint(md) {
+                              margin-top: 1.2rem;
+                        }
+                  }
+            }
+
+            &--list {
+                  display: grid;
+                  row-gap: 3.2rem;
+                  column-gap: 2rem;
+
+                  @include breakpoint(sm) {
+                        grid-template-columns: repeat(2, minmax(0, 1fr));
+                  }
+
+                  @include breakpoint(lg) {
+                        grid-template-columns: repeat(4, minmax(0, 1fr));
+                  }
+
+                  @include breakpoint(xl) {
+                        column-gap: 3.2rem;
+                  }
+            }
+
+            &--item {
+                  max-width: 38.4rem;
+
+                  &.img {
+                        position: relative;
+                        height: 0;
+                        border-radius: 1.2rem;
+                        overflow: hidden;
+                        padding-bottom: calc((1/ 1)*100%);
+
+                        img {
+                              @include position(absolute);
+                              inset: 0px;
+                              @include box(100%, 100%);
+                              object-fit: cover;
+                              max-width: 100%;
+                              vertical-align: middle;
+                        }
+                  }
+
+                  &>h3 {
+                        @include text(1.8rem, 600, $black, 2.8rem);
+                        margin-top: 1.6rem;
+
+                        @include breakpoint(md) {
+                              @include text(2rem, 600, $black, 2.8rem);
+                        }
+                  }
+
+                  &>span {
+                        @include text(1.4rem, 400, $grey-600, 2rem);
+                        display: block;
+
+                        @include breakpoint(sm) {
+                              @include text(1.6rem, 400, $grey-600, 2.4rem);
+
+                        }
+                  }
+            }
+      }
+
+
+}

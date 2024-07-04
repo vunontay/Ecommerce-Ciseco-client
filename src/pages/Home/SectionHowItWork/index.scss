@@ -1,0 +1,55 @@
+@import "../../../styles/abstracts/";
+
+.how-it-work {
+
+      &__list {
+            padding: 6rem 0;
+
+            @include breakpoint(lg) {
+                  padding: 8rem 0;
+            }
+
+            border-top: 0.1rem solid $grey-450;
+            @include flex(space-between, center, null, 2rem);
+            flex-wrap: wrap;
+            text-align: center;
+      }
+
+      &__item {
+            width: 100%;
+
+            @include breakpoint(sm) {
+                  width: calc(50% - 2rem);
+            }
+
+            @include breakpoint(lg) {
+                  width: calc(25% - 2rem);
+            }
+
+            @include flex(center, center, column, null);
+
+            span {
+                  border-radius: 9999px;
+                  @include text(1.4rem, 600, $black);
+                  padding: 0.4rem 1rem;
+                  margin-top: 4rem;
+            }
+
+            img {
+                  @include box(14rem, 14rem);
+            }
+
+            h1 {
+                  @include text(1.6rem, 600, $black);
+                  margin-top: 2rem;
+            }
+
+            p {
+                  padding: 0 1rem;
+                  @include text(1.4rem, 400, $grey-700);
+                  margin-top: 2rem;
+            }
+
+
+      }
+}

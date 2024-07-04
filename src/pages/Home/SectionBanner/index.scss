@@ -1,0 +1,57 @@
+@import "../../../styles/abstracts/";
+
+.banner {
+      margin-top: 6rem;
+
+      @include breakpoint(lg) {
+            margin-top: 8rem;
+      }
+
+      &__slider {
+            &-list {
+                  margin: 0 -1.6rem;
+            }
+
+            &-item {
+                  padding: 0 1.6rem;
+                  cursor: pointer;
+            }
+
+            &-content {
+                  width: 100%;
+                  padding: 2rem;
+                  position: relative;
+                  min-height: 24rem;
+                  border-radius: 1.2rem;
+
+                  &>h5 {
+                        @include text(1.4rem, 400, $grey-800);
+                  }
+
+                  &>h3 {
+                        @include box(20rem, 6.4rem);
+                        @include text(2.4rem, 600, $grey-800);
+                  }
+
+                  &>button {
+                        margin-top: 5.6rem;
+                  }
+
+                  &:hover {
+                        box-shadow: 2px 2px 2px 2px $grey-400;
+                        transition: 0.2s ease-in;
+                  }
+
+            }
+
+            &-img {
+                  &>img {
+                        @include box(50%, 100%);
+                        object-fit: contain;
+                        @include position(absolute, 0, 0, null, null);
+                  }
+
+            }
+      }
+
+}

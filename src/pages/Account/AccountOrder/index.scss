@@ -1,0 +1,175 @@
+@import "../../../styles/abstracts/";
+
+.account-order {
+      &>h2 {
+            @include text(2.4rem, 600, $black, 3.2rem);
+
+            @include breakpoint(sm) {
+                  @include text(3rem, 600, $black, 3.6rem);
+            }
+      }
+
+      .order-list {
+            margin-top: 4rem;
+            border-radius: 0.8rem;
+            border: 0.1rem solid $grey-500;
+
+            @include breakpoint(sm) {
+                  margin-top: 4.8rem;
+            }
+
+            &__header {
+                  @include flex(null, null, column, null);
+                  padding: 1.6rem;
+                  background-color: $grey-200;
+
+                  @include breakpoint(sm) {
+                        @include flex(space-between, center, row, null);
+                        padding: 3.2rem;
+                  }
+
+                  &>button {
+                        margin-top: 1.2rem;
+                        padding: 1rem 1.6rem;
+                        border: 0.1rem solid $grey-500;
+                        background-color: $white;
+                        border-radius: 9999px;
+                        @include text(1.4rem, 500, $black, 2rem);
+
+                        @include breakpoint(sm) {
+                              margin-top: 0;
+                              padding: 1rem 2.4rem;
+                        }
+                  }
+            }
+
+            &__info {
+                  p {
+                        @include text(1.8rem, 600, $black, 2.8rem);
+                  }
+
+                  .timer {
+                        margin-top: 0.6rem;
+
+                        @include breakpoint(sm) {
+                              margin-top: 0.8rem;
+                        }
+
+                        span {
+                              @include text(1.4rem, null, null, 2rem);
+
+                              &:nth-child(1) {
+                                    color: $grey-600;
+                              }
+
+                              &:nth-child(2) {
+                                    margin: 0 0.8rem;
+                              }
+
+                              &:nth-child(3) {
+                                    color: $blue-600;
+                              }
+                        }
+                  }
+            }
+
+            &__list {
+                  padding: 1.6rem;
+                  border-top: 0.1rem solid $grey-500;
+
+                  @include breakpoint(sm) {
+
+                        padding: 3.2rem;
+                  }
+            }
+
+            &__item {
+                  display: flex;
+                  padding: 1.6rem 0;
+
+                  &:first-child {
+                        padding-top: 0;
+                  }
+
+                  @include breakpoint(sm) {
+                        padding: 2.8rem 0;
+                  }
+            }
+
+            &__img {
+                  @include box(6.4rem, 9.6rem);
+                  flex-shrink: 0;
+                  overflow: hidden;
+                  border-radius: 1.2rem;
+
+                  @include breakpoint(sm) {
+                        width: 8rem;
+                  }
+
+                  &>img {
+                        @include box(100%, 100%);
+                        object-fit: cover;
+                  }
+            }
+
+            &__details {
+                  @include flex(null, null, column, null);
+                  flex: 1 1 0%;
+                  margin-left: 1.6rem;
+
+                  &--top {
+                        @include flex(space-between, null, null, null);
+
+                        h3 {
+                              @include text(1.6rem, 500, $grey-800, 2.4rem);
+                        }
+
+                        .info {
+                              margin-top: 0.4rem;
+                              @include text(1.4rem, 400, $grey-650, 2rem);
+                        }
+                  }
+
+                  &--border {
+                        border-right: 0.1rem solid $grey-500 ;
+                        margin: 0 0.8rem;
+                  }
+
+                  &--price {
+                        @include breakpoint(sm) {
+                              display: flex;
+                        }
+
+                        flex: 1 1 0%;
+                        justify-content: flex-end;
+
+                        span {
+                              @include flex(center, center, null, null);
+                              border: 0.2rem solid $green-600;
+                              border-radius: 1rem;
+                              @include box(auto, 3rem);
+                              @include text(1.4rem, 500, $green-600, null);
+                              text-align: center;
+
+                              @include breakpoint(md) {
+                                    padding: 0.6rem 1rem;
+                              }
+                        }
+                  }
+
+                  &--bottom {
+                        @include flex(space-between, flex-end);
+                        flex: 1 1 0%;
+
+                        .total {
+                              @include text(1.4rem, 400, $grey-650, 2rem);
+                        }
+
+                        .price {
+                              @include text(1.4rem, 500, $black, 2rem);
+                              cursor: pointer;
+                        }
+                  }
+            }
+      }
+}

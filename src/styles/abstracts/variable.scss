@@ -1,0 +1,66 @@
+//font
+$roboto-font: "Roboto", sans-serif;
+//colors:
+$black: #292429;
+$black-300: rgb(30, 41, 59);
+$black-100: #3d5d7d;
+
+$white: #ffff;
+$pink: #fee2e2;
+$browen: #b84f59;
+$red: #ef4747;
+
+$grey-800: #39415a;
+$grey-700: #57587f;
+$grey-650: #6b7280;
+$grey-600: #7b829e;
+$grey-550: #8692a5;
+$grey-500: #e5e7eb;
+$grey-450: #dee4ec;
+$grey-400: #f7f7f9;
+$grey-300: #f4f7fa;
+$grey-200: #f8fafc;
+$grey-100: rgb(241, 245, 249);
+
+$green-600: #22c55e;
+$green-500: #76db9b;
+$green-400: #e3ffe6;
+
+$blue-650: #0284c7;
+$blue-600: #56bae8;
+$blue-500: #79bee1;
+
+$yellow-500: #fbbf24;
+$yellow-400: #9f9b89;
+$yellow-300: #fef9c3;
+$yellow-200: #fff7ed;
+$yellow-100: #fefce8;
+
+$purple-400: #676fcf;
+$purple-200: #e0e7ff;
+$purple-100: #f5f3ff;
+
+//
+$bg-icon-star-yellow: $yellow-500;
+$bg-icon: $black;
+
+//
+$cl-title: $black;
+$cl-title-grey: $grey-600;
+
+//
+$btn-outline-green: $green-500;
+$btn-primary: $blue-600;
+$btn-outline-primary: $blue-600;
+$btn-outline-grey: $grey-100;
+$title-accordin: rgba(241, 245, 249, 0.8);
+$cl-title-accordin: #3b344f;
+$bg-order-card: #f1f5f9;
+
+
+$hover_transition: opacity 0.3s linear,
+      visibility 0.3s linear,
+      color 0.15s linear,
+      border-color 0.15s linear,
+      background-color 0.15s linear,
+      box-shadow 0.15s linear;

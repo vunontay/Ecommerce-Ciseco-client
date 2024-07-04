@@ -1,0 +1,35 @@
+@import "../../../styles/abstracts/";
+
+.page-heading {
+
+      @include flex(space-between, center, null, null);
+      margin-bottom: 3rem;
+      flex-wrap: wrap;
+
+      @include breakpoint(lg) {
+            margin-bottom: 3.5rem;
+      }
+
+
+      &__title {
+            @include text(3rem, 600, $black, 3.6rem);
+
+            @include breakpoint(md) {
+                  font-size: 3.2rem;
+            }
+
+            span {
+                  color: $grey-650;
+            }
+      }
+
+      &__arrows {
+            @include flex(flex-end, center, null, 0.2rem);
+            flex: 1;
+            margin-top: 2rem;
+
+            @include breakpoint(lg) {
+                  margin-top: 0;
+            }
+      }
+}

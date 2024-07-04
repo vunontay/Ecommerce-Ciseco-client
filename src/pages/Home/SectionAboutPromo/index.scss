@@ -1,0 +1,175 @@
+@import "../../../styles/abstracts/";
+
+.about {
+      &__promo {
+            margin-top: 6.4rem;
+
+            @include breakpoint(lg) {
+                  margin-top: 11.2rem;
+                  padding-top: 4rem;
+            }
+
+            &--content {
+                  @include flex(null, null, column, null);
+                  position: relative;
+                  border-radius: 1.6rem;
+                  background-color: $grey-400;
+                  padding: 1.6rem;
+                  padding-bottom: 0;
+
+                  @include breakpoint(sm) {
+                        border-radius: 4rem;
+                        padding: 2rem;
+                        padding-bottom: 0;
+                  }
+
+                  @include breakpoint(lg) {
+                        flex-direction: row;
+                        padding: 9.6rem;
+                  }
+            }
+
+            &--img {
+                  position: absolute;
+                  inset: 0px;
+
+                  img {
+                        @include box(100%, 100%);
+                        position: absolute;
+                        inset: 0px;
+                        object-position: bottom;
+                        object-fit: contain;
+                        max-width: 100%;
+                        vertical-align: middle;
+                  }
+            }
+
+            &--left {
+                  max-width: 51.2rem;
+                  position: relative;
+
+                  @include breakpoint(lg) {
+                        width: 50%;
+                  }
+
+                  &>h2 {
+                        @include text(3.6rem, 600, $black, 4rem);
+
+                        @include breakpoint(md) {
+                              @include text(4.8rem, 600, $black, 1);
+                        }
+                  }
+
+                  &>p {
+                        @include text(1.6rem, 400, $grey-650, 2.4rem);
+                        margin-top: 2rem;
+                  }
+
+                  &>ul {
+                        margin-top: 4rem;
+
+                        li {
+                              @include flex(null, center);
+
+                              &:not(&:first-child) {
+                                    margin-top: 1.6rem;
+                              }
+
+                              span {
+                                    &:first-child {
+                                          @include text(1.2rem, 500, null, 1.6rem);
+                                          padding: 0.4rem 1rem;
+                                          border-radius: 9999px;
+                                    }
+
+                                    &:last-child {
+                                          margin-left: 1.6rem;
+                                          @include text(1.6rem, 500, $black, 2.4rem);
+                                    }
+                              }
+
+                              &:nth-child(1) {
+                                    span {
+                                          &:first-child {
+                                                background-color: #f3e8ff;
+                                                color: #6b21a8;
+                                          }
+                                    }
+                              }
+
+                              &:nth-child(2) {
+                                    span {
+                                          &:first-child {
+                                                background-color: #dbeafe;
+                                                color: #1e40af;
+                                          }
+                                    }
+                              }
+
+                              &:nth-child(3) {
+                                    span {
+                                          &:first-child {
+                                                background-color: #fee2e2;
+                                                color: #991b1b;
+                                          }
+                                    }
+                              }
+                        }
+                  }
+
+                  &>form {
+                        max-width: 38.4rem;
+                        margin-top: 4rem;
+                        position: relative;
+
+                        &>input {
+                              background-color: $white;
+                              border-radius: 9999px;
+                              @include box(100%, 4.4rem);
+                              padding: 1.2rem 1.6rem;
+                              border: 0.1rem solid $grey-500;
+                              @include text(1.4rem, 400, $grey-800, 2rem);
+                              letter-spacing: 0.06rem;
+                              outline: none;
+
+                              &:focus {
+                                    border: 0.1rem solid #7dd3fc;
+                              }
+                        }
+
+                        &>button {
+                              @include position(absolute, 50%, 0.4rem, null, null);
+                              @include box(3.6rem, 3.6rem);
+                              transform: translateY(-50%);
+                              @include flex(center, center);
+                              background-color: $black;
+                              color: $white;
+                              border-radius: 9999px;
+
+                              svg {
+                                    font-size: 2.4rem;
+                              }
+                        }
+                  }
+            }
+
+            &--right {
+                  position: relative;
+                  display: block;
+                  max-width: 51.2rem;
+                  margin-top: 4rem;
+
+                  @include breakpoint(lg) {
+                        @include position(absolute, null, 0, 0, null);
+                        margin-top: 0;
+                        max-width: calc(50% - 4rem);
+                  }
+
+                  img {
+                        max-width: 100%;
+                        height: auto;
+                        vertical-align: middle;
+                  }
+            }
+      }
+}

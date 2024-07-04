@@ -1,0 +1,147 @@
+@import "../../styles/abstracts/";
+
+.blog {
+
+      padding: 9.6rem 0;
+
+      &__main {
+            @include grid(null, null, 2.4rem);
+            padding-bottom: 6.4rem;
+
+            @include breakpoint (md) {
+                  gap: 3.2rem;
+            }
+
+            @include breakpoint(lg) {
+                  padding-bottom: 11.2rem;
+                  grid-template-columns: repeat(2, minmax(0, 1fr));
+            }
+
+            &--left {
+
+                  img {
+                        max-height: 46rem;
+                        border-radius: 2.4rem;
+                        @include box(100%, auto);
+                        object-fit: cover;
+                        vertical-align: middle;
+                  }
+
+                  &-item {
+                        @include flex(null, null, column);
+                        margin-top: 3.2rem;
+                        padding-right: 4rem;
+
+                        &>h2 {
+                              @include text(1.8rem, 600, $black, 2.8rem);
+                              text-transform: capitalize;
+
+                              @include breakpoint(sm) {
+                                    @include text(2.4rem, 600, $black, 3.2rem);
+                              }
+                        }
+
+                        &>p {
+                              margin-top: 1rem;
+                              color: $grey-650;
+                        }
+
+
+                  }
+            }
+
+            .item-info {
+                  @include flex(null, center, null, 0.8rem);
+                  margin-top: 2rem;
+
+                  &>img {
+                        border-radius: 9999px;
+                        @include box(2.8rem, 2.8rem);
+                  }
+
+                  &>span {
+                        @include text(1.4rem, 500, $black, 2rem);
+
+                        &:last-child {
+                              color: $grey-600;
+                              font-weight: 400;
+                        }
+                  }
+            }
+
+            &--right {
+                  @include grid(null, null, 2.4rem);
+                  gap: 4rem;
+
+                  @include breakpoint (md) {
+                        gap: 3.2rem;
+                  }
+
+                  &-card {
+                        display: flex;
+                        max-height: 10rem;
+
+                        @include breakpoint (md) {
+                              max-height: 20rem;
+
+                        }
+
+                        &>.card-left {
+
+                              @include flex(null, null, column, 1rem);
+                              @include box(60%, 100%);
+                              flex-shrink: 0;
+
+                              @include breakpoint(sm) {
+                                    width: calc(100% / 12) * 8;
+                              }
+
+                              &>h2 {
+                                    @include text(1.6rem, 600, $black, 2.4rem);
+                              }
+
+                              &>p {
+                                    color: $grey-650;
+                                    display: none;
+                                    -webkit-line-clamp: 2;
+                                    -webkit-box-orient: vertical;
+                                    overflow: hidden;
+
+                                    @include breakpoint(sm) {
+                                          display: -webkit-box;
+
+                                    }
+                              }
+                        }
+
+
+
+                        &>.card-right {
+                              @include box(40%, 100%);
+                              flex-shrink: 0;
+                              padding-left: 2rem;
+
+                              @include breakpoint(sm) {
+                                    width: calc(100% / 12)*4;
+                                    padding-left: 2rem;
+                              }
+
+                              &>img {
+                                    overflow: hidden;
+                                    @include box(100%, 100%);
+                                    border-radius: 1.2rem;
+                                    object-fit: cover;
+                              }
+                        }
+                  }
+            }
+      }
+
+      &__ads {
+            width: 100%;
+
+            &>img {
+                  @include box(100%, auto);
+            }
+      }
+}

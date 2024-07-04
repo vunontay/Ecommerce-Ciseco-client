@@ -1,0 +1,18 @@
+@import "../../../styles/abstracts/";
+
+.new-product {
+      margin-top: 6rem;
+      margin-bottom: 12.8rem;
+
+      @include breakpoint(lg) {
+            margin-top: 8rem;
+      }
+
+      &__item {
+            padding: 0 1.6rem;
+      }
+
+      &__list {
+            margin: 0 -1.6rem;
+      }
+}

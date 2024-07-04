@@ -1,0 +1,30 @@
+@import "../../../styles/abstracts/";
+
+.account-wishlist {
+
+      &>h2 {
+            @include text(2.4rem, 600, $black, 3.2rem);
+
+            @include breakpoint(sm) {
+                  @include text(3rem, 600, $black, 3.6rem);
+            }
+      }
+}
+
+.product-wishlist {
+      @include grid(repeat(1, minmax(0, 1fr)), null, 2.4rem);
+
+      @include breakpoint(sm) {
+            margin-top: 4.8rem;
+            @include grid(repeat(2, minmax(0, 1fr)), null, null);
+
+      }
+
+      @include breakpoint(md) {
+            gap: 3.2rem;
+      }
+
+      @include breakpoint(lg) {
+            @include grid(repeat(3, minmax(0, 1fr)), null, null);
+      }
+}

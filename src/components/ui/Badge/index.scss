@@ -1,0 +1,19 @@
+@import "../../../styles/abstracts/";
+
+.badge {
+      background: $white;
+      box-shadow: 2px 8px 40px rgba(0, 0, 0, .08);
+      padding: 0.6rem 1rem;
+      border-radius: 9999px;
+      @include flex(center, center, null, null);
+
+
+      svg {
+            font-size: 1.2rem;
+      }
+
+      span {
+            @include text(1.2rem, 500, $black, 1);
+            margin-left: 0.4rem;
+      }
+}

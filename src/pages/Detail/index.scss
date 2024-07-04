@@ -1,0 +1,11 @@
+@import "../../styles/abstracts/";
+
+.product-detail-page {
+      margin-top: 2rem;
+      margin-bottom: 4rem;
+
+      @include breakpoint(lg) {
+            margin-bottom: 6.4rem;
+            margin-top: 4.4rem;
+      }
+}

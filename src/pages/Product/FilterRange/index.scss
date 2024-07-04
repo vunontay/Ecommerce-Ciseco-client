@@ -1,0 +1,71 @@
+@import "../../../styles/abstracts/";
+
+.filter-range {
+      padding: 3.2rem 0;
+      border-bottom: 0.1rem solid $grey-500;
+      @include flex(mull, start, column, null);
+
+
+      h3 {
+            @include text(1.6rem, 600, $black, 2.4rem);
+            margin-bottom: 1rem;
+      }
+
+      &__slider {
+            width: 100%;
+
+            input[type=range] {
+                  -webkit-appearance: none;
+                  appearance: none;
+                  background-color: $grey-500;
+                  border-radius: 0.4rem;
+                  @include box(100%, 0.4rem);
+                  margin: 2rem 0;
+                  padding: 0;
+
+                  &:focus {
+                        outline: none;
+                  }
+            }
+
+            input[type=range]::-webkit-slider-thumb {
+                  -webkit-appearance: none;
+                  appearance: none;
+                  background-color: $white;
+                  border-radius: 99999px;
+                  border: 0.2rem solid $blue-500;
+                  @include box(1.6rem, 1.6rem);
+                  cursor: pointer;
+            }
+      }
+
+      &__info {
+            @include flex(space-between, center, null, 2rem);
+            margin-top: 2rem;
+      }
+
+      &__item {
+            &>label {
+                  @include text(1.4rem, 500, $grey-800, 2rem)
+            }
+      }
+
+      &__value {
+            margin-top: 0.4rem;
+            border-radius: 9999px;
+            border: 0.1rem solid $grey-500;
+            position: relative;
+
+            svg {
+                  @include position(absolute, 50%, 1.6rem, 0, null);
+                  transform: translateY(-50%);
+            }
+
+            input {
+                  padding: 0.8rem 1.6rem;
+                  border: none;
+                  outline: none;
+                  width: 100%;
+            }
+      }
+}

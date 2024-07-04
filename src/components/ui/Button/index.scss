@@ -1,0 +1,126 @@
+@import "../../../styles/abstracts/";
+
+.btn {
+      padding: 1.2rem 1.6rem;
+      border: none;
+      @include text(1.4rem, 500, $black);
+      background-color: $white;
+
+      &--basic {
+            border: none;
+      }
+
+      &--sm {
+            padding: 0.8rem 1.6rem;
+      }
+
+      &_outline--green {
+            padding: 0.1rem 0.6rem;
+            background-color: $white;
+            border: 2px solid $green-600;
+            border-radius: 0.8rem;
+            @include text(1.8rem, 600, $btn-outline-green);
+      }
+
+      &_contain--black {
+            background-color: $black;
+            border-radius: 9999px;
+            @include text(1.4rem, 500, $white);
+
+            &:hover {
+                  transition: 0.3s ease-in;
+                  background-color: $black-300;
+            }
+      }
+
+      &_contain--white {
+            @include text(1.5rem, 500, $black);
+            border-radius: 9999px;
+            border: 2px solid $grey-500;
+
+            &::after,
+            &::before {
+                  border: 0 solid #e5e7eb;
+            }
+
+            &:hover {
+                  background-color: rgb(243, 244, 246);
+                  transition: 0.3s ease-in;
+            }
+      }
+
+      &_contain--primary {
+            padding: none;
+            border: 1px solid $btn-outline-primary;
+            border-radius: 1.6rem;
+            @include text(1.4rem, 600, $black, 2rem);
+
+            &:hover {
+                  background-color: $blue-650;
+                  transition: 0.3s ease-in;
+                  color: $white;
+            }
+      }
+
+      &_outline--primary {
+            @include text(1.4rem, 600, $btn-outline-primary, 2rem);
+            padding: 1rem !important;
+            border-radius: 1rem;
+
+            &:hover {
+                  background-color: $blue-500;
+                  transition: 0.2s ease-in;
+                  color: $white !important;
+            }
+      }
+
+      &--icon {
+            padding: 1rem;
+            width: 4rem;
+            @include flex(center, center);
+
+            svg {
+                  @include text(1.6rem, 400, $grey-650, 2rem);
+            }
+
+            border-radius: 50%;
+            border: 2px solid $grey-300;
+      }
+
+      &_outline--icon {
+            &:hover {
+                  background-color: $btn-outline-grey;
+                  transition: 0.3s ease-in;
+            }
+      }
+
+      &_contain--grey {
+            background-color: $grey-300;
+            border-radius: 0.8rem;
+            @include text(1.6rem, 500, $black, 2rem);
+
+            &:hover {
+                  background-color: $btn-outline-grey;
+                  transition: 0.3s ease-in;
+            }
+      }
+
+      &_outline--grey {
+            border-radius: 9999px;
+            @include text(1.6rem, 500, $grey-700, 2rem);
+      }
+
+      &_contain--white-hv-black {
+            @include box(3.6rem, 3.6rem);
+            @include flex(center, center);
+            @include text(1.6rem, 600, $black, 2rem);
+            text-align: center;
+            border-radius: 0.8rem;
+
+            &:hover {
+                  background-color: $black;
+                  color: $white;
+                  transition: 0.3s ease-in;
+            }
+      }
+}

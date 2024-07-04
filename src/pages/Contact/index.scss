@@ -1,0 +1,110 @@
+@import "../../styles/abstracts/";
+
+.contact {
+      &>h2 {
+            @include flex(center, center);
+            margin: 8rem 0;
+            @include text(3rem, 600, $black, 3.6rem);
+
+            @include breakpoint(md) {
+                  font-size: 4.8rem;
+                  line-height: 115%;
+            }
+      }
+
+      &__main {
+            @include grid(repeat(1, minmax(0, 1fr)), null, 4.8rem);
+            max-width: 80rem;
+            margin: 0 auto;
+
+            @include breakpoint(md) {
+                  grid-template-columns: repeat(2, minmax(0, 1fr));
+            }
+      }
+
+      &__left {
+            max-width: 38.4rem;
+
+
+            &--item {
+                  &:not(&:first-child) {
+                        margin-top: 3.2rem;
+                  }
+
+                  &>h3 {
+                        text-transform: uppercase;
+                        letter-spacing: 0.04rem;
+                        @include text(1.4rem, 600, $black, 2rem);
+                  }
+
+                  &>p {
+                        margin-top: 0.8rem;
+                        color: $grey-800;
+                  }
+
+                  &>nav {
+                        display: flex;
+                        margin-top: 0.8rem;
+
+                        &>a {
+                              &:not(&:first-child) {
+                                    margin-left: 1rem;
+                              }
+
+                              @include box(2.4rem, 2.4rem);
+
+                              &>svg {
+                                    @include box(100%, 100%);
+                              }
+                        }
+                  }
+            }
+      }
+
+      &__right {
+            &>form {
+                  @include flex(null, null, column, 2.4rem);
+
+                  &>label {
+                        display: block;
+
+                        &>input {
+                              margin-top: 0.4rem;
+                              @include box(100%, 4.4rem);
+                              border-radius: 1.6rem;
+                              border: 0.1rem solid $grey-500;
+                              padding: 1.2rem 1.6rem;
+                              @include text(1.4rem, 400, $black, 2rem);
+                        }
+
+                        &>label {
+                              @include text(1.6rem, 500, $black, 2.4rem);
+                        }
+
+                        &>textarea {
+                              display: block;
+                              margin-top: 0.4rem;
+                              padding: 0.8rem 1.2rem;
+                              background: $white;
+                              border: 0.1rem solid $grey-500;
+                              border-radius: 1.6rem;
+                              width: 100%;
+                        }
+                  }
+
+                  &>button {
+                        @include box(18rem, 5rem);
+                        @include text(1.6rem, 500, $white, 2.4rem);
+                  }
+            }
+
+      }
+
+      &__bottom {
+            padding: 9.6rem 0;
+
+            @include breakpoint(lg) {
+                  padding: 12.8rem 0;
+            }
+      }
+}

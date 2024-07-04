@@ -1,0 +1,39 @@
+@import "../../../styles/abstracts/";
+
+.checkbox {
+      @include box(4rem, 4rem);
+      @include flex(center, center);
+      cursor: pointer;
+      border-radius: 50%;
+      overflow-y: hidden;
+      transition: background-color 0.2s;
+      position: relative;
+
+      &:after {
+            content: '';
+            background: $grey-200;
+            @include position(absolute, 50%, null, null, 50%);
+            transform: translate(-50%, -50%);
+            @include box(0, 0);
+            transform-style: flat;
+            opacity: 0;
+            border-radius: 100%;
+            transition: all 0.6s;
+      }
+
+      &:active:after {
+            @include box(4rem, 4rem);
+            opacity: 0.4;
+            transition: 0.1s;
+      }
+
+      &:hover {
+            background-color: $grey-100;
+      }
+
+      &__input {
+            cursor: pointer;
+            @include box(2rem, 2rem);
+            accent-color: $blue-650;
+      }
+}

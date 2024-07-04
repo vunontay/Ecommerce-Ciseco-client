@@ -1,0 +1,74 @@
+@import "../../../styles/abstracts/";
+
+.cart-order {
+      @include position(sticky, 11.2rem, null, null, null);
+
+      h3 {
+            @include text(1.8rem, 600, $black, 2.8rem);
+      }
+
+      &__details {
+            padding: 2.8rem 0;
+
+            @include breakpoint(md) {
+                  padding-top: 2.8rem;
+                  padding-bottom: 0;
+            }
+      }
+
+      &__item {
+            @include flex(space-between, null, null, null);
+            padding: 1.6rem 0;
+            border-bottom: 0.1rem solid $grey-100;
+
+
+            &:nth-child(4) {
+                  padding-bottom: 0;
+            }
+
+            &:first-child {
+                  padding-top: 0;
+            }
+
+            &--title {
+                  @include text(1.4rem, 400, $grey-600, 2rem);
+            }
+
+            &--price {
+                  @include text(1.4rem, 600, $black, 2rem);
+            }
+
+            &--total {
+                  @include text(1.6rem, 600, $black, 2.4rem);
+            }
+      }
+
+      &__btn {
+            button {
+                  width: 100%;
+                  margin-top: 3.2rem;
+                  @include text(1.6rem, 500, $white, 2.4rem);
+                  padding: 1.2rem 1.6rem;
+
+                  @include breakpoint(sm) {
+                        padding: 1.4rem 2.4rem;
+                  }
+            }
+      }
+
+      &__info {
+            margin-top: 2rem;
+            @include flex(center, center, null, null);
+
+            p {
+                  @include text(1.4rem, 400, $grey-600, 2rem);
+                  padding-left: 0.4rem;
+            }
+
+            a {
+                  @include text(1.4rem, 500, $black, 2rem);
+
+                  text-decoration: underline;
+            }
+      }
+}

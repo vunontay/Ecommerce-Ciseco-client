@@ -1,0 +1,104 @@
+@import "../../../styles/abstracts/";
+
+.modal {
+      opacity: 0;
+      visibility: hidden;
+      transition: 0.5s;
+      z-index: 100;
+      position: fixed;
+      inset: 0;
+
+      &.open {
+            visibility: visible;
+            opacity: 1;
+      }
+
+      &__overlay {
+            z-index: 20;
+            @include position(fixed, 0, 0, 0, 0);
+            @include box(100%, 100%);
+            background-color: rgba(0, 0, 0, 0.4);
+      }
+
+      &__body--left {
+            z-index: 20;
+            @include position(fixed, 0, null, 0, 0);
+            @include box(100%, 100%);
+            max-width: 44.8rem;
+            height: 100%;
+            background-color: $white;
+
+            .close_modal {
+                  @include position(absolute, 0, 0, null, null);
+                  border-radius: 1.6rem;
+
+                  svg {
+                        font-size: 2rem;
+                  }
+            }
+      }
+
+      &__content {
+            @include flex(center, stretch, null, null);
+            height: 100%;
+
+            @include breakpoint(md) {
+                  padding: 0 1.6rem;
+                  align-items: center;
+            }
+      }
+
+      &__wrap {
+            position: relative;
+            display: inline-flex;
+            max-height: 100%;
+            max-width: 100rem;
+            @include box(100%, 100%);
+
+            @include breakpoint(lg) {
+                  height: auto;
+            }
+
+            z-index: 20;
+
+            @include breakpoint(xl) {
+                  padding: 3.2rem 0;
+            }
+      }
+
+      &__body--center {
+            display: flex;
+            max-height: 100%;
+            width: 100%;
+            flex: 1 1 0%;
+            padding: 3.2rem;
+            background: $white;
+            overflow: hidden;
+            overflow-y: auto;
+            scrollbar-width: none;
+            animation: fade-in 0.2s ease-in forwards;
+            transition: opacity 0.2s linear;
+
+            @include breakpoint(lg) {
+                  border-radius: 1.6rem;
+            }
+      }
+
+      &__button {
+            @include position(absolute, 1.2rem, 1.2rem, null, null);
+            transition: transform 0.15s cubic-bezier(.4, 0, .2, 1);
+            background: $white;
+            z-index: 30;
+            border-radius: 9999px;
+            padding: 1rem;
+            @include flex(center, center, null, null);
+
+            &:hover {
+                  background: $grey-500;
+            }
+
+            svg {
+                  font-size: 2rem;
+            }
+      }
+}

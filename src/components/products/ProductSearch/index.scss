@@ -1,0 +1,133 @@
+@import "../../../styles/abstracts/";
+
+.search {
+      width: 100%;
+
+      &__form {
+            width: 100%;
+            position: relative;
+
+            &>span {
+                  @include position(absolute, 50%, null, null, 2rem);
+
+                  @include breakpoint(md) {
+                        left: 2.4rem;
+                  }
+
+                  transform: translateY(-50%);
+                  @include box(2rem, 2rem);
+
+                  svg {
+                        font-size: 2rem;
+                  }
+            }
+      }
+
+      &__input {
+            border-radius: 9999px;
+            width: 100%;
+            padding: 2rem 2rem 2rem 5.6rem;
+            border: none;
+            outline: none;
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, .1), 0 4px 6px -4px rgba(0, 0, 0, .1);
+            border: 0.2rem solid transparent;
+
+            &:focus {
+                  border: 0.2rem solid rgb(186 230 253 / 50%);
+            }
+
+            @include text(1.4rem, 400, $grey-600, 2rem);
+
+            @include breakpoint(md) {
+                  padding-left: 6.4rem;
+            }
+      }
+
+      &__button {
+            @include flex(center, center, null, null);
+            @include position(absolute, 50%, 1rem, null, null);
+            @include box(4.4rem, 4.4rem);
+            transform: translateY(-50%);
+            cursor: pointer;
+            background-color: $black-300;
+            color: $white;
+            border-radius: 9999px;
+
+            svg {
+                  font-size: 2rem;
+            }
+      }
+
+      &__result {
+            overflow-y: auto;
+            max-height: 100vh;
+
+            &:has(&--link) {
+                  padding: 4rem 0;
+
+            }
+
+            &--link {
+                  display: flex;
+                  margin-bottom: 3rem;
+                  width: 100%;
+                  cursor: pointer;
+            }
+
+            &--thumb {
+                  background-color: #F0F9FC;
+                  @include box(10rem, 10rem);
+                  margin-right: 3rem;
+                  overflow: hidden;
+                  border: solid 0.1rem $black-300;
+                  border-radius: 0.4rem;
+
+                  img {
+                        @include box(100%, 100%);
+                        object-fit: cover;
+                  }
+            }
+
+            &--col {
+                  @include flex(space-between, null, column, null);
+                  width: 70%;
+
+                  @include breakpoint(md) {
+                        width: 80%;
+                  }
+
+                  &-title {
+                        @include text(1.8rem, 600, $black, 2.4rem);
+                        transition: opacity 0.3s linear, visibility 0.3s linear;
+                  }
+
+                  &-desc {
+                        width: 100%;
+
+                        p {
+                              @include text(1.4rem, 400, $black, 2rem);
+                              letter-spacing: 0.02em;
+                              margin-top: 1rem;
+                              overflow: hidden;
+                              white-space: nowrap;
+                              text-overflow: ellipsis;
+                        }
+                  }
+
+                  &-price {
+                        span {
+                              @include text(1.6rem, 500, $blue-600, 2rem);
+                              margin-top: 1rem;
+                              display: block;
+                              letter-spacing: -0.005em;
+                        }
+                  }
+            }
+
+            .no-result {
+                  padding-top: 3.2rem;
+                  @include flex(center, center, null, 0.8rem);
+                  @include text(2rem, 600, $black, 2.8rem);
+            }
+      }
+}

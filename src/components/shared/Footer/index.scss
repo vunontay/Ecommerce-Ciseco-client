@@ -1,0 +1,88 @@
+@import "../../../styles/abstracts/";
+
+footer {
+      padding: 11.2rem 0 9.6rem;
+      margin-right: auto;
+      margin-left: auto;
+      @include text(2.4rem, 400, $grey-800);
+      border-top: 0.2rem solid $grey-450;
+
+      .footer {
+            text-align: center;
+            @include grid(repeat(1, minmax(0, 1fr)), null, 4rem);
+
+            @include breakpoint(sm) {
+                  grid-template-columns: repeat(2, minmax(0, 1fr));
+            }
+
+            @include breakpoint(md) {
+                  grid-template-columns: repeat(4, minmax(0, 1fr));
+            }
+
+            @include breakpoint(lg) {
+                  grid-template-columns: repeat(5, minmax(0, 1fr));
+            }
+
+            &__list {
+
+                  &--logo {
+
+                        .logo a {
+                              @include box(100%, 4rem);
+                              @include flex(start);
+                              margin-bottom: 1rem;
+
+                              img {
+                                    @include box(100%, 100%);
+                              }
+                        }
+                  }
+
+                  &_link {
+
+                        margin-top: 0;
+                        @include flex(center, center, column, 1rem);
+
+                        a {
+                              margin-top: 1rem;
+                              font-size: 2rem;
+                              @include flex(null, center, null, 1rem);
+                        }
+
+                        span {
+
+                              display: block;
+                              @include text(1.4rem, 400, $grey-800);
+
+                              &:hover {
+                                    color: $black;
+                                    scale: 1.1;
+                                    transition: 0.2s ease-in;
+                              }
+                        }
+                  }
+
+                  h2 {
+                        @include text(1.4rem, 600, $grey-800);
+                  }
+
+                  ul {
+                        margin-top: 2rem;
+
+                        li {
+                              margin-top: 1rem;
+                              cursor: pointer;
+                              @include text(1.4rem, 400, $grey-800);
+
+                              &:hover {
+                                    color: $black;
+                                    scale: 1.1;
+                                    transition: 0.2s ease-in;
+                              }
+                        }
+                  }
+            }
+      }
+
+
+}

@@ -1,0 +1,120 @@
+@import "../../../styles/abstracts/";
+
+.hero {
+      &__background {
+            position: relative;
+            background-color: $green-400;
+
+            @include breakpoint(xl) {
+                  min-height: 64rem;
+            }
+      }
+
+      &__slider {
+            @include flex(space-between, center, null, null);
+            flex-wrap: wrap;
+            @include box(100%, 100%);
+            padding: 4.8rem 0;
+
+            @include breakpoint(md) {
+                  flex-wrap: nowrap;
+                  padding: 5.6rem 0;
+            }
+
+            img {
+                  @include box(100%, auto);
+                  transition: transform 0.5s ease-in-out, opacity 0.5s ease-in-out;
+
+                  @include breakpoint(md) {
+                        @include box(50%, 100%);
+                  }
+            }
+
+            &-content {
+                  h4 {
+                        @include text(1.6rem, 500, $grey-800, 2.4rem);
+                        transition: transform 0.5s ease-in-out, opacity 0.5s ease-in-out;
+                        transition-delay: 0.2s;
+                  }
+
+                  h2 {
+                        margin-top: 2rem;
+                        @include text(3rem, 600, $black, 3.4rem);
+                        transition: transform 0.5s ease-in-out, opacity 0.5s ease-in-out;
+                        transform: translateX(-8rem);
+                        transition-delay: 0.3s;
+
+                        @include breakpoint(sm) {
+                              @include text(6rem, 600, $black, 1);
+                        }
+                  }
+            }
+
+            &-button {
+                  @include flex(null, center, null, 0.6rem);
+                  margin-top: 3.2rem;
+                  padding: 1.2rem 2.4rem;
+                  @include text(1.4rem, 500, null, 2rem);
+                  transition: transform 0.5s ease-in-out, opacity 0.5s ease-in-out;
+                  transform: translateX(-8rem);
+                  transition-delay: 0.4s;
+
+                  svg {
+                        font-size: 2.4rem;
+                  }
+            }
+
+      }
+
+      &__arrows {
+            @include position(absolute, 50%, null, null, null);
+            transform: translateY(-50%);
+            z-index: 1;
+            display: none;
+
+            @include breakpoint (lg) {
+                  display: block;
+            }
+
+            &.next {
+                  right: 5%;
+            }
+
+            &.previous {
+                  left: 5%;
+            }
+      }
+
+      .slick-slide {
+            display: flex !important;
+            align-items: center;
+            justify-content: center;
+            height: auto;
+
+            &.slick-active {
+                  .hero__slider img {
+                        transform: scale(1);
+                        opacity: 1;
+                  }
+
+                  .hero__slider-content h4,
+                  .hero__slider-content h2,
+                  .hero__slider-button {
+                        transform: translateX(0);
+                        opacity: 1;
+                  }
+            }
+
+            .hero__slider img {
+                  transform: scale(1.05);
+                  opacity: 0.5;
+            }
+
+            .hero__slider-content h4,
+            .hero__slider-content h2,
+            .hero__slider-button {
+                  transform: translateX(-8rem);
+                  opacity: 0;
+            }
+      }
+}

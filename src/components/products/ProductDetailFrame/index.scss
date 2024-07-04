@@ -1,0 +1,237 @@
+@import "../../../styles/abstracts/";
+
+.product-detail-frame {
+      width: 100%;
+
+      @include breakpoint(lg) {
+            display: flex;
+      }
+
+      &__left {
+            width: 100%;
+
+            @include breakpoint(lg) {
+                  width: 55%;
+            }
+      }
+
+      &__right {
+            width: 100%;
+            padding-top: 4rem;
+
+            &>h2 {
+                  @include text(2.4rem, 600, $black, 3.6rem);
+
+                  @include breakpoint(sm) {
+                        @include text(3rem, 600, $black, 3.6rem);
+                  }
+            }
+
+            label {
+                  @include text(1.4rem, 500, $black, 2rem);
+            }
+
+            @include breakpoint(lg) {
+                  width: 45%;
+                  padding-top: 0;
+                  padding-left: 2.8rem;
+            }
+
+            @include breakpoint(xl) {
+                  padding-left: 3.6rem;
+            }
+
+            @include breakpoint(xxl) {
+                  padding-left: 4rem;
+            }
+      }
+
+      &__img {
+            position: relative;
+            overflow: hidden;
+            border-radius: 1.6rem;
+
+            img {
+                  max-height: 60rem;
+                  @include box(100%, 100%);
+                  object-fit: contain;
+            }
+      }
+
+      &__badge {
+            @include position(absolute, 1.2rem, null, null, 1.2rem);
+      }
+
+      &__favorite {
+            @include position(absolute, 1.2rem, 1.2rem, null, null);
+            box-shadow: 2px 8px 40px rgba(0, 0, 0, .08);
+            border-radius: 9999px;
+            @include flex(center, center, null, null);
+            @include box(3.6rem, 3.6rem);
+            background-color: $white;
+
+            svg {
+                  font-size: 2rem;
+            }
+      }
+
+
+
+      &__details {
+            margin-top: 2rem;
+            @include flex(null, center, null, 1rem);
+            flex-wrap: wrap;
+
+            @include breakpoint(sm) {
+                  gap: 0;
+            }
+
+
+            .price {
+                  padding: 0.6rem 1.2rem;
+                  border: 0.2rem solid $green-600;
+                  border-radius: 1rem;
+                  @include text(1.8rem, 600, $green-600, 1.8rem);
+            }
+
+            .border {
+                  margin: 0 2rem;
+            }
+
+            .star {
+                  @include flex(null, center, null, 0.8rem);
+                  @include text(1.4rem, 500, $black, 2rem);
+                  text-decoration: underline;
+
+                  svg {
+                        @include text(2rem, null, $yellow-500, null);
+                  }
+            }
+      }
+
+      &__colors {
+            margin-top: 2.8rem;
+
+            @include breakpoint(xxl) {
+                  margin-top: 3.2rem;
+            }
+
+            .color-list {
+                  @include flex(null, center, null, 0.6rem);
+
+                  margin-top: 1.2rem;
+            }
+
+            .color-option {
+                  flex: 1 1 0%;
+                  position: relative;
+                  height: 4rem;
+                  max-width: 7.5rem;
+                  cursor: pointer;
+                  border-radius: 9999px;
+                  border: 0.2rem solid transparent;
+                  box-shadow: rgba(0, 0, 0, 0.16) 0px 10px 36px 0px, rgba(0, 0, 0, 0.06) 0px 0px 0px 1px;
+
+                  &.selected {
+                        border-color: $blue-650;
+                  }
+
+                  @include breakpoint(sm) {
+                        height: 4.4rem;
+                  }
+            }
+
+            .color-swatch {
+                  position: absolute;
+                  inset: 0.2rem;
+                  overflow: hidden;
+                  border-radius: 9999px;
+            }
+      }
+
+      &__sizes {
+            margin-top: 2.8rem;
+
+            @include breakpoint(xxl) {
+                  margin-top: 3.2rem;
+            }
+
+            .size-list {
+                  margin-top: 1.2rem;
+                  @include grid(repeat(5, minmax(0, 1fr)), null, 0.6rem);
+
+                  @include breakpoint(sm) {
+                        @include grid(repeat(7, minmax(0, 1fr)), null, 0.6rem);
+                  }
+            }
+
+            .size-option {
+                  height: 4rem;
+                  @include flex(center, center, null, null);
+                  @include text(1.6rem, 600, $black, 2.4rem);
+                  border-radius: 1.6rem;
+                  border: 0.1rem solid $grey-450;
+                  cursor: pointer;
+
+                  &.selected {
+                        background-color: $blue-650;
+                        color: $white;
+                  }
+
+                  @include breakpoint(sm) {
+                        height: 4.4rem;
+                  }
+            }
+      }
+
+      &__actions {
+            display: flex;
+            margin-top: 3.2rem;
+
+            button {
+                  margin-left: 1.4rem;
+                  flex: 1 1 0%;
+                  @include text(1.6rem, 500, $white, 1);
+                  @include flex(center, center, null, 1.2rem);
+            }
+      }
+
+      hr {
+            border-color: $grey-100;
+            opacity: 0.2;
+            margin: 2.8rem 0;
+
+            @include breakpoint(xxl) {
+                  margin: 4rem 0;
+            }
+      }
+
+      &__benefit {
+            margin-top: 2.8rem;
+            @include grid(repeat(1, minmax(0, 1fr)), null, 1.4rem);
+
+            @include breakpoint(sm) {
+                  @include grid(repeat(2, minmax(0, 1fr)), null, 1.4rem);
+            }
+
+            @include breakpoint(xxl) {
+                  margin-top: 3.2rem;
+            }
+
+            .benefit-item {
+                  @include flex(null, null, column, null);
+                  border-radius: 1.6rem;
+                  padding: 2rem;
+
+                  h6 {
+                        margin-top: 1rem;
+                        @include text(1.6rem, 600, $black, 2.4rem);
+                  }
+
+                  p {
+                        margin-top: 0.2rem;
+                        @include text(1.4rem, 400, $grey-600, 2rem);
+                  }
+            }
+      }
+}

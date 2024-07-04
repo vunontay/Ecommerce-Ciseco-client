@@ -1,0 +1,25 @@
+@import "../../../styles/abstracts/";
+
+
+.filter-checkbox {
+      padding: 3.2rem 0;
+      border-bottom: 0.1rem solid $grey-500;
+      @include flex(null, start, column, null);
+
+      &:first-child {
+            padding-top: 0;
+      }
+
+      h3 {
+            @include text(1.6rem, 600, $black, 2.4rem);
+            margin-bottom: 1rem;
+      }
+
+      &__field {
+            @include flex(null, center, null, 1.4rem);
+
+            label {
+                  @include text(1.4rem, 400, $black-300, 2rem);
+            }
+      }
+}

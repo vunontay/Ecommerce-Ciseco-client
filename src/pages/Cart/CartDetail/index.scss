@@ -1,0 +1,59 @@
+@import "../../../styles/abstracts/";
+
+.cart-page {
+      padding: 6.4rem 0;
+
+      @include breakpoint (lg) {
+            padding: 8rem 0 11.2rem;
+      }
+
+      hr {
+            border-color: $grey-100;
+            opacity: 0.2;
+            margin-top: 5.6rem;
+      }
+
+      &__main {
+            margin-top: 5.6rem;
+      }
+
+      &__content {
+            @include flex(null, null, column, null);
+
+            @include breakpoint(lg) {
+                  flex-direction: row;
+            }
+
+            &--left {
+                  width: 100%;
+
+                  @include breakpoint(lg) {
+                        width: 60%;
+                  }
+
+                  @include breakpoint(xl) {
+                        width: 55%;
+                  }
+            }
+
+            &--center {
+                  flex-shrink: 0;
+                  margin: 4rem 0;
+                  border-color: $grey-100;
+                  border-top: 0.1rem solid $grey-500;
+
+                  @include breakpoint(lg) {
+                        border-left: 0.1rem solid $grey-500;
+                        margin: 0 4rem;
+                  }
+
+                  @include breakpoint(xl) {
+                        margin: 0 6.4rem;
+                  }
+            }
+
+            &--right {
+                  flex: 1 1 0%;
+            }
+      }
+}

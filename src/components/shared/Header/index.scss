@@ -1,0 +1,398 @@
+@import "../../../styles/abstracts/";
+
+.header {
+      @include flex(null, center, null, null);
+      @include box(100%, 8rem);
+      box-shadow: 0px 15px 20px rgba(0, 0, 0, 0.1);
+      transition: all .3s ease-in-out;
+      position: relative;
+      z-index: 10;
+      background: $white;
+
+      &.scrolled {
+            z-index: 2;
+            @include position(fixed, 0, null, null, null);
+            animation: slideDown 0.35s ease-out;
+      }
+
+      &__container {
+            @include flex(space-between, center, null, null);
+            width: 100%;
+      }
+
+      &__logo {
+            @include box(14rem, 4rem);
+
+            img {
+                  @include box(100%, 100%);
+            }
+      }
+
+      &__navbar {
+            display: none;
+            @include text(1.5rem, 500, $grey-800, null);
+
+            @include respond(desktop) {
+                  display: block;
+                  margin: 0 1.6rem;
+
+                  &>a,
+                  span {
+                        padding: 1rem 2rem;
+                        color: inherit;
+                        position: relative;
+                        cursor: pointer;
+
+                        &:hover {
+                              border-radius: 9999px;
+                              background-color: $grey-450;
+                        }
+                  }
+
+                  & span:hover .dropdown {
+                        opacity: 1;
+                        transform: translateY(0);
+                        pointer-events: auto;
+                  }
+            }
+      }
+
+      &__control {
+            @include flex(null, center, null, null);
+
+            .cart-quantity {
+                  @include position(absolute, 0.6rem, 0.6rem, null, null);
+                  background-color: $blue-650;
+                  @include text(1.2rem, 400, $white, null);
+                  @include box(1.6rem, 1.6rem);
+                  @include flex(center, center, null, null);
+                  border-radius: 50%;
+            }
+
+            &--cart-popup {
+                  display: none;
+            }
+
+            &--cart-link {
+                  display: inline-block;
+            }
+
+            @include breakpoint(md) {
+                  &--cart-popup {
+                        display: inline-block;
+                  }
+
+                  &--cart-link {
+                        display: none;
+                  }
+            }
+      }
+
+      &__avatar,
+      &__control--item {
+            @include flex(center, center, null, null);
+            padding: 1rem;
+            font-size: 4.8rem;
+            color: $grey-800;
+            @include box(4.8rem, 4.8rem);
+            border-radius: 50%;
+            cursor: pointer;
+            object-fit: cover;
+            position: relative;
+
+            &:hover {
+                  border-radius: 9999px;
+                  background-color: $grey-450;
+                  transition: 0.2s ease-in;
+            }
+      }
+
+      // POPUP USER
+      .popup-user {
+            min-width: 26rem;
+            @include grid(repeat(1, minmax(0, 1fr)), null, 2rem);
+            padding: 2.8rem 2.4rem;
+
+            &__info {
+                  @include flex(null, center, null, null);
+            }
+
+            &__avatar {
+                  @include flex(center, center, null, null);
+                  flex-shrink: 0;
+                  @include box(4.8rem, 4.8rem);
+
+                  img {
+                        @include box(100%, 100%);
+                        border-radius: 9999px;
+                  }
+            }
+
+            &__details {
+                  flex-grow: 1;
+                  margin-left: 1.2rem;
+                  overflow: hidden;
+
+                  h4 {
+                        @include text(1.6rem, 600, $black, 2.4rem);
+                  }
+
+                  p {
+                        margin-top: 0.2rem;
+                        @include text(1.2rem, 400, $grey-800, 1.6rem);
+                        overflow: hidden;
+                        text-overflow: ellipsis;
+                        white-space: nowrap;
+                  }
+            }
+
+            span {
+                  width: 100%;
+                  border-top: 0.1rem solid $grey-450;
+            }
+
+            &__action {
+                  transition-timing-function: cubic-bezier(.4, 0, .2, 1);
+                  transition-duration: .15s;
+                  padding: 0.8rem;
+                  border-radius: 0.8rem;
+                  @include flex(null, center);
+                  color: $grey-800;
+                  margin: -0.8rem;
+
+                  svg {
+                        font-size: 2.4rem;
+                  }
+
+                  p {
+                        margin-left: 1.4rem;
+                        @include text(1.4rem, 500, $grey-800, 2rem);
+                  }
+            }
+      }
+
+      // POPUP USER
+
+
+      // POPUP CART
+      .popup-cart {
+            min-width: 44rem;
+            overflow: hidden;
+
+            &__list {
+                  max-height: 60vh;
+                  overflow-y: auto;
+                  scrollbar-width: none;
+                  padding: 2rem;
+
+                  &>h3 {
+                        @include text(2rem, 600, $grey-800, 2.8rem);
+                  }
+            }
+
+            &__loading {
+                  @include flex(center, center);
+                  min-height: 40vh;
+            }
+
+            &__item {
+                  padding: 2rem 0;
+                  display: flex;
+                  border-top: 0.1rem solid $grey-500;
+
+                  &:first-child {
+                        border-top: none;
+                  }
+            }
+
+            &__img {
+                  @include box(8rem, 9.6rem);
+                  flex-shrink: 0;
+                  overflow: hidden;
+                  border-radius: 1rem;
+
+                  img {
+                        @include box(100%, 100%);
+                        object-fit: cover;
+                  }
+            }
+
+            &__details {
+                  @include flex(null, null, column, null);
+                  flex: 1 1 0%;
+                  margin-left: 1.6rem;
+
+                  &--top {
+                        @include flex(space-between, null, null, null);
+
+                        h3 {
+                              @include text(1.6rem, 500, $grey-800, 2.4rem);
+                              overflow: hidden;
+                              text-overflow: ellipsis;
+                              white-space: nowrap;
+                              max-width: 16rem;
+                        }
+
+                        .info {
+                              margin-top: 0.4rem;
+                              @include text(1.4rem, 400, $grey-650, 2rem);
+                        }
+                  }
+
+                  &--border {
+                        border-right: 0.1rem solid $grey-500 ;
+                        margin: 0 0.8rem;
+                  }
+
+                  &--price {
+                        @include breakpoint(sm) {
+                              display: flex;
+                        }
+
+                        flex: 1 1 0%;
+                        justify-content: flex-end;
+
+                        span {
+                              @include flex(center, center, null, null);
+                              border: 0.2rem solid $green-600;
+                              border-radius: 1rem;
+                              @include box(auto, 3rem);
+                              @include text(1.4rem, 500, $green-600, null);
+                              text-align: center;
+
+                              @include breakpoint(md) {
+                                    padding: 0.6rem 1rem;
+                              }
+                        }
+                  }
+
+                  &--bottom {
+                        @include flex(space-between, flex-end);
+                        flex: 1 1 0%;
+
+                        .total {
+                              @include text(1.4rem, 400, $grey-650, 2rem);
+                        }
+
+                        .remove {
+                              @include text(1.4rem, 500, $blue-600, 2rem);
+                              cursor: pointer;
+
+                              &:hover {
+                                    color: $blue-500;
+                              }
+                        }
+                  }
+            }
+
+            &__empty {
+                  width: 100%;
+
+                  img {
+                        @include box(100%, 100%);
+                        object-fit: cover;
+                  }
+            }
+
+            &__actions {
+                  padding: 2rem;
+                  background-color: $grey-300;
+
+                  &--info {
+                        @include flex(space-between);
+
+                        &>span {
+                              @include text(1.6rem, 600, $grey-800, 2.4rem);
+
+                              &>p {
+                                    @include text(1.4rem, 400, $grey-650, 2rem);
+                              }
+                        }
+
+                  }
+
+                  &--buttons {
+                        @include flex(space-between, null, null, 0.8rem);
+                        margin-top: 2rem;
+
+                        button {
+                              @include box(20rem, 5.4rem)
+                        }
+                  }
+            }
+      }
+
+      // POPUP CART
+
+      // HEADER MOBILE 
+      &__button-mobile {
+            @include flex(null, center);
+
+            @include breakpoint(lg) {
+                  display: none;
+            }
+      }
+
+      .header-mobile {
+            @include box(100%, 100vh);
+            overflow-y: auto;
+            padding: 0.8rem 0;
+
+            &__top {
+                  padding: 2.4rem 2rem;
+            }
+
+            &__social {
+                  @include flex(null, null, column);
+                  margin-top: 4rem;
+
+                  &>p {
+                        @include text(1.4rem, 400, $grey-650, 2rem);
+                  }
+
+                  &--icon {
+                        @include flex(null, null, null, 1rem);
+                        margin-top: 2rem;
+
+                        svg {
+                              font-size: 2.8rem;
+
+                              @include breakpoint(sm) {
+                                    font-size: 3.2rem;
+                              }
+                        }
+                  }
+            }
+
+            &__categories {
+                  @include flex(null, null, column);
+                  padding: 2.4rem 0.8rem;
+                  border-top: 0.1rem solid $grey-500;
+                  border-bottom: 0.1rem solid $grey-500;
+
+                  &>a {
+                        text-transform: uppercase;
+                        @include text(1.4rem, 500, $black, 2rem);
+                        padding: 1rem 1.6rem;
+                        border-radius: 0.8rem;
+
+                        &:hover {
+                              background-color: $grey-100;
+                        }
+                  }
+            }
+      }
+
+      // HEADER MOBILE 
+
+}
+
+@keyframes slideDown {
+      from {
+            transform: translateY(-100%);
+      }
+
+      to {
+            transform: translateY(0);
+      }
+}

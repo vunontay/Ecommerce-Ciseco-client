@@ -1,0 +1,125 @@
+@import "../../../styles/abstracts/";
+
+.product-card {
+      position: relative;
+      border-radius: 1rem;
+      transition: transform 0.5s ease-in-out;
+      will-change: transform;
+      cursor: pointer;
+      padding: 1rem 1.6rem;
+      overflow: hidden;
+      background-color: $grey-400;
+
+      &__image-container {
+            position: relative;
+            @include box(100%, 24rem);
+            border-radius: 0.8rem;
+            border-top-right-radius: 4rem;
+            margin-bottom: 1rem;
+
+            img {
+                  @include box(100%, 100%);
+                  object-fit: cover;
+                  border-radius: inherit;
+            }
+      }
+
+      &__price {
+            @include position(absolute, null, 0.8rem, -1rem, null);
+            background: $white;
+            @include text(1.2rem, 800, $black, null);
+            padding: 0.6rem;
+            border-radius: 1rem 1rem 2rem 2rem;
+            box-shadow: rgba(100, 100, 111, 0.2) 0px 0px 15px 0px;
+      }
+
+      &__actions {
+            width: 100%;
+            @include position(absolute, 5%, 5%, null, null);
+            @include flex(end, null, null, 1rem);
+      }
+
+      &__favorite,
+      &__view {
+            &.added {
+                  svg {
+                        color: $red;
+                  }
+            }
+
+            opacity: 0;
+            visibility: hidden;
+            transition: opacity 0.3s ease-in-out,
+            visibility 0.3s ease-in-out;
+      }
+
+
+      &__content {
+            padding: 0.8rem;
+            margin-bottom: 1rem;
+      }
+
+      &__content-brand {
+            @include text(1.6rem, 600, $black, null);
+      }
+
+      &__content-name {
+            padding: 0.2rem 0;
+            @include text(1.4rem, 500, $grey-700, null);
+            overflow: hidden;
+            text-overflow: ellipsis;
+            text-wrap: nowrap;
+      }
+
+      &__bottom {
+
+            @include flex(space-between, center, null, 1rem);
+
+            @include breakpoint(md) {
+                  gap: 0.4rem;
+            }
+
+            flex-wrap: wrap;
+
+            .button {
+                  @include flex(center, center, null, 0.4rem);
+            }
+
+            .rating {
+                  @include flex(space-between, center, null, 0.4rem);
+                  @include text(1.4rem, 500, $grey-800, null);
+            }
+      }
+
+
+
+      &:hover {
+            transform: scale(1.03);
+
+            .product-card__favorite,
+            .product-card__view {
+                  opacity: 1;
+                  visibility: visible;
+            }
+      }
+}
+
+@keyframes bouncing {
+
+      from,
+      to {
+            transform: scale(1, 1);
+      }
+
+      25% {
+            transform: scale(1.5, 2.1);
+      }
+
+      50% {
+            transform: scale(2.1, 1.5);
+      }
+
+      75% {
+            transform: scale(1.5, 2.05);
+      }
+}

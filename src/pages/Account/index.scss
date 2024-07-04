@@ -1,0 +1,64 @@
+@import "../../styles/abstracts/";
+
+.account-page {
+      padding: 6.4rem 0;
+
+      &__top {
+
+            margin: 0 auto;
+            max-width: 90rem;
+
+            @include breakpoint(sm) {
+                  margin-top: 8rem;
+            }
+
+
+            &>hr {
+                  opacity: 0.3;
+                  border-color: $grey-500;
+                  margin-top: 4rem;
+
+                  &:last-child {
+                        margin: 0;
+                  }
+            }
+
+      }
+
+      &__header {
+            max-width: 67rem;
+
+            &>h2 {
+                  @include text(3rem, 600, $black, 3.6rem);
+
+                  @include breakpoint(xl) {
+                        @include text(3.6rem, 600, $black, 4rem);
+                  }
+            }
+
+            &>span {
+                  display: block;
+                  margin-top: 1.6rem;
+                  @include text(1.6rem, 400, $grey-600, 2.4rem);
+
+                  @include breakpoint(md) {
+                        @include text(1.8rem, 400, $grey-600, 2.8rem);
+                  }
+
+                  b {
+                        color: $black;
+                  }
+            }
+      }
+
+      &__content {
+            max-width: 90rem;
+            margin: 0 auto;
+
+            @include breakpoint(lg) {
+                  padding-bottom: 12.8rem;
+            }
+
+            padding: 5.6rem 0 9.6rem;
+      }
+}

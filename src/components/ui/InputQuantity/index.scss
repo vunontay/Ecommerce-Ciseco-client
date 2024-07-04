@@ -1,0 +1,85 @@
+@import '../../../styles/abstracts/';
+
+.quantity {
+  @include box(12rem, 5.6rem);
+  background-color: $grey-300;
+  border-radius: 9999px;
+  padding: 1.2rem 0.8rem;
+
+  @include breakpoint(sm) {
+    @include box(14rem, 6rem);
+  }
+
+  @include flex(space-between, center, null, null);
+
+  overflow: hidden;
+  position: relative;
+
+
+  &.full-width {
+    width: 100%;
+  }
+
+  &__btn {
+    @include box(3.6rem, 3.6rem);
+    @include flex(center, center);
+    @include text($black, 600, 1.6rem);
+    cursor: pointer;
+    border-radius: 1.2rem;
+    transition: all 0.15s ease;
+    transform: translateY(-50%);
+    overflow: hidden;
+    border-radius: 99999px;
+    border: 0.1rem solid $grey-600;
+
+    &:after {
+      content: '';
+      background: $grey-200;
+      @include position(absolute, 50%, null, null, 50%);
+      transform: translate(-50%, -50%);
+      @include box(0, 0);
+      transform-style: flat;
+      opacity: 0;
+      border-radius: 100%;
+      transition: all 0.6s;
+    }
+
+    &:active:after {
+      @include box(10rem, 10rem);
+      opacity: 0.4;
+      transition: 0.1s;
+    }
+
+    &.left {
+      @include position(absolute, 50%, null, null, 10%);
+    }
+
+    &.right {
+      @include position(absolute, 50%, 10%, null, null);
+    }
+  }
+
+  &__textfield {
+    @include box(100%, 100%);
+    text-align: center;
+    padding: 0;
+    font-weight: bold;
+    background-color: $grey-300;
+
+    &:focus,
+    &:not(:focus):valid {
+      outline: none;
+      border: none;
+
+      ~.textfield__label {
+        top: -0.8rem;
+        left: 0.8rem;
+        @include text($black, null, 1rem);
+        opacity: 1;
+        background-color: $white;
+        padding: 0 0.5rem 0;
+        z-index: 1;
+      }
+    }
+  }
+}

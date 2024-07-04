@@ -1,0 +1,92 @@
+@import "../../../styles/abstracts/";
+
+.accordion {
+      width: 100%;
+
+      &__heading {
+            @include text(1.4rem, 700, $black-100, 2.4rem);
+            text-transform: uppercase;
+            margin: 0.4rem 0.4rem 1rem;
+            padding: 1rem;
+            border-radius: 0.6rem;
+            letter-spacing: 0.02rem;
+
+      }
+
+      &__list {
+            @include flex(null, null, column, null);
+            padding: 0 0.4rem;
+            list-style: none;
+      }
+
+      &__item {
+            background-color: $white;
+
+            &:not(:first-child) {
+                  margin-top: 1rem;
+            }
+      }
+
+      &__title {
+            background-color: rgba(241, 245, 249, .8);
+            padding: 0.8rem 1.6rem;
+            border-radius: 0.8rem;
+            @include text(1.6rem, 500, $black, 2.4rem);
+            @include flex(space-between, center, null, null);
+            cursor: pointer;
+            user-select: none;
+            transition-duration: .3s;
+            border: 0.1rem solid $grey-300;
+            // &.active {
+            //       background-color: $green-400;
+            //       color: $white;
+            // }
+
+            &:hover {
+                  background-color: $grey-400;
+            }
+      }
+
+      &__icon {
+            transition-duration: .3s;
+            color: $black-300;
+
+            &.active {
+                  color: $white;
+                  transform: rotate(90deg);
+            }
+      }
+
+      &__content {
+            ul {
+                  list-style: none;
+
+                  li {
+                        margin-top: 1rem;
+                        @include text(1.4rem, 400, $grey-600, 2.4rem);
+                        padding: 1.2rem 1.6rem 1.6rem 1.6rem;
+                        @include flex(null, center, null, 0.6rem);
+                        cursor: pointer;
+                        transition-duration: .3s;
+                        border-radius: 0.8rem;
+
+                        svg {
+                              @include box(1rem, 1rem);
+                              vertical-align: middle;
+                        }
+                  }
+
+            }
+
+            height: 0;
+            overflow: hidden;
+            transition: height 0.3s ease;
+
+            margin: 0;
+
+            &.active {
+                  height: auto;
+            }
+      }
+
+}

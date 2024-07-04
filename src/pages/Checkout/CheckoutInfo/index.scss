@@ -1,0 +1,139 @@
+@import "../../../styles/abstracts/";
+
+.checkout-info {
+
+      &__item {
+            border: 0.1rem solid $grey-500;
+            border-radius: 0.8rem;
+            margin-top: 3.2rem;
+
+
+            &:first-child {
+                  margin-top: 0;
+            }
+
+      }
+
+      &__header {
+            @include flex(null, flex-start, column, null);
+            padding: 2.4rem;
+
+
+            @include breakpoint(sm) {
+                  flex-direction: row;
+            }
+      }
+
+      &__icon {
+            display: none;
+
+            svg {
+                  @include box(2.4rem, 2.6rem);
+            }
+
+            @include breakpoint(sm) {
+                  display: block;
+            }
+      }
+
+      &__title {
+            @include breakpoint(sm) {
+                  margin-left: 3.2rem;
+            }
+
+            h3 {
+                  @include flex(null, center, null, 1.2rem);
+                  @include text(1.6rem, 400, $grey-800, 2.4rem);
+                  text-transform: uppercase;
+                  letter-spacing: -0.04rem;
+            }
+
+            span {
+                  @include text(1.4rem, 600, $black, 2rem);
+                  margin-top: 0.4rem;
+            }
+      }
+
+      &__btn {
+            padding: 0.8rem 1.6rem;
+            background: $grey-200;
+            border-radius: 0.8rem;
+            @include text(1.4rem, 500, $black, 2rem);
+            transition: all 0.15s ease 0s;
+
+            &:hover {
+                  background: $grey-400;
+            }
+
+            @include breakpoint(sm) {
+                  margin-top: 0;
+                  margin-left: auto;
+            }
+      }
+
+      &__submit {
+
+            margin-top: 3.2rem;
+            @include text(1.6rem, 500, $white, 2.4rem);
+            padding: 1.2rem 1.6rem;
+
+            @include breakpoint(sm) {
+                  padding: 1.4rem 2.4rem;
+            }
+      }
+
+      &__content {
+            border-top: 0.1rem solid $grey-500;
+            height: -2.8rem;
+            overflow: hidden;
+            transition: height 0.3s ease;
+            // padding: 0 2.4rem;
+
+            &.active {
+                  height: auto;
+            }
+      }
+
+      &__wrapper {
+            padding: 2.8rem 2.4rem;
+      }
+
+      &__field {
+            margin-top: 2.4rem;
+
+            &:first-child {
+                  margin-top: 0;
+            }
+
+            &.col-2 {
+                  @include grid(repeat(1, minmax(0, 1fr)), null, 1.6rem);
+
+                  @include breakpoint(sm) {
+                        grid-template-columns: repeat(2, minmax(0, 1fr));
+                        gap: 1.2rem;
+                  }
+            }
+      }
+
+      &__payment {
+            @include flex(null, center, null, 0);
+            padding: 1.2rem 0;
+
+            .payment__icon {
+                  margin-left: 1.2rem;
+                  padding: 1rem;
+                  border: 0.2rem solid $grey-500;
+                  border-radius: 1.6rem;
+                  @include box(5rem, 5rem);
+
+                  svg {
+                        font-size: 2.8rem;
+                  }
+            }
+
+            p {
+                  margin-left: 2.4rem;
+                  @include text(1.6rem, 500, $black, 2.4rem);
+            }
+      }
+}

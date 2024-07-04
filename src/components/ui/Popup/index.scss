@@ -1,0 +1,58 @@
+@import "../../../styles/abstracts/";
+
+.popup {
+      overflow: hidden;
+      display: none;
+      opacity: 0;
+      transform: translateY(20px);
+      transition: opacity 0.5s, transform 0.5s;
+      @include position(absolute, 100%, 1rem, null, null);
+      z-index: 10;
+      margin-top: 1.4rem;
+      padding: 0 1.6rem;
+      background-color: $white;
+      border-radius: 2.4rem;
+      box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+
+
+      @include breakpoint(sm) {
+            padding: 0 0;
+            right: 0;
+      }
+
+
+      &.open {
+            display: block;
+            animation: slideUpFadeIn 0.5s forwards;
+      }
+
+      &.close {
+            animation: slideDownFadeOut 0.5s forwards;
+            opacity: 0;
+            transform: translateY(20px);
+      }
+}
+
+@keyframes slideUpFadeIn {
+      0% {
+            opacity: 0;
+            transform: translateY(20px);
+      }
+
+      100% {
+            opacity: 1;
+            transform: translateY(0);
+      }
+}
+
+@keyframes slideDownFadeOut {
+      0% {
+            opacity: 1;
+            transform: translateY(0);
+      }
+
+      100% {
+            opacity: 0;
+            transform: translateY(20px);
+      }
+}

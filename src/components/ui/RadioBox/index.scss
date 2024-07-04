@@ -1,0 +1,78 @@
+@import "../../../styles/abstracts/";
+
+.input-radio {
+      display: inline-flex;
+      align-items: center;
+
+      &__input {
+            display: none;
+      }
+
+      &__span {
+            @include box(2.4rem, 2.4rem);
+            position: absolute;
+
+            &::after {
+                  content: '';
+                  background: $blue-650;
+                  @include position(absolute, 50%, null, null, 50%);
+                  transform: translate(-50%, -50%);
+                  @include box(3.6rem, 3.6rem);
+                  opacity: 0;
+                  border-radius: 100%;
+                  transition: ease 0.8s;
+            }
+      }
+
+      &__label {
+            z-index: 1;
+            display: inline-block;
+            position: relative;
+            padding-left: 4rem;
+            cursor: pointer;
+            @include text(1.4rem, 400, $black-300, 2rem);
+
+            &:before {
+                  content: '';
+                  @include box(2.4rem, 2.4rem);
+                  @include position(absolute, 50%, null, null, 0);
+                  transform: translateY(-50%);
+                  border: 0.2rem solid $blue-650;
+                  border-radius: 50%;
+            }
+
+            &:after {
+                  content: '';
+                  background-color: $blue-650;
+                  @include box(0, 0);
+                  @include position(absolute, 50%, null, null, 1.2rem);
+                  transform: translate(-50%, -50%);
+                  border-radius: 50%;
+                  transition: 0.2s ease-in-out;
+            }
+      }
+
+      &__input:checked+&__label:after {
+            @include box(1.2rem, 1.2rem);
+      }
+
+      &__input:active+&__label+&__span::after {
+            @include box(0, 0);
+            opacity: 1;
+            transition: 0.1s ease-in-out;
+      }
+
+      &__input:active+&__label+&__span {
+            animation: fade-out 4s forwards;
+      }
+}
+
+@keyframes fade-out {
+      0% {
+            opacity: 0.2;
+      }
+
+      100% {
+            opacity: 0;
+      }
+}
