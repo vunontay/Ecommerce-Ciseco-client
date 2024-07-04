@@ -1,7 +1,6 @@
-import "./index.scss";
+import React, { useEffect, useState } from "react";
 import { useFormik } from "formik";
 import { Icon } from "@iconify/react/dist/iconify.js";
-import { useEffect, useState } from "react";
 import { useProduct } from "../../../hooks/useProduct";
 import { useDebounce } from "../../../hooks/useDebounce";
 import { formatMoney } from "../../../utils/util";
@@ -10,12 +9,13 @@ import { useNavigate } from "react-router-dom";
 import Skeleton from "react-loading-skeleton";
 import "react-loading-skeleton/dist/skeleton.css";
 import { Product } from "../../../types/product-type";
+import "./index.scss";
 
 interface ProductSearchProps {
     onClose: () => void;
 }
 
-export const ProductSearch = ({ onClose }: ProductSearchProps) => {
+const ProductSearchComponent = ({ onClose }: ProductSearchProps) => {
     const navigate = useNavigate();
     const [searchValue, setSearchValue] = useState<string>("");
     const debouncedSearchValue = useDebounce(searchValue, 500);
@@ -122,4 +122,4 @@ export const ProductSearch = ({ onClose }: ProductSearchProps) => {
     );
 };
 
-export default ProductSearch;
+export const ProductSearch = React.memo(ProductSearchComponent);

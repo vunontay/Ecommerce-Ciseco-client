@@ -8,7 +8,7 @@ import {
 } from "../../../utils/enum";
 import { useFilterProduct } from "../../../hooks/useFilterProduct";
 import { Button, Pagination } from "../../../components/ui";
-import ProductList from "../ProductList";
+
 import FilterOptionCheckbox from "../FilterCheckbox";
 import FilterRange from "../FilterRange";
 import "./index.scss";
@@ -16,6 +16,7 @@ import Skeleton from "react-loading-skeleton";
 import { Icon } from "@iconify/react/dist/iconify.js";
 import FilterOptionRadioBox from "../FilterRadioBox";
 import { Breadcrumb } from "../../../components/ui/Breadcrumb";
+import { ProductList } from "../ProductList";
 
 const Collection = () => {
     const {

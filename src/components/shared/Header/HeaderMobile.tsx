@@ -6,7 +6,7 @@ import { memo, useCallback } from "react";
 interface HeaderMobileProps {
     onClose: () => void;
 }
-export const HeaderMobileComponent = ({ onClose }: HeaderMobileProps) => {
+const HeaderMobileComponent = ({ onClose }: HeaderMobileProps) => {
     const handleCategoryClick = useCallback(() => {
         onClose();
     }, [onClose]);

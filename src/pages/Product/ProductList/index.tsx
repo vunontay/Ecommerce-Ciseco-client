@@ -1,3 +1,4 @@
+import React from "react";
 import { ProductCard, ProductDetailFrame } from "../../../components/products";
 import { Modal } from "../../../components/ui";
 import useModal from "../../../hooks/useModal";
@@ -8,7 +9,7 @@ interface ProductListProps {
     products: Product[] | undefined;
 }
 
-const ProductList = ({ products }: ProductListProps) => {
+const ProductListComponent = ({ products }: ProductListProps) => {
     const { openModal, handleCloseModal, handleOpenModal, dataModal } =
         useModal();
     return (
@@ -31,4 +32,4 @@ const ProductList = ({ products }: ProductListProps) => {
     );
 };
 
-export default ProductList;
+export const ProductList = React.memo(ProductListComponent);

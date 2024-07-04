@@ -1,3 +1,4 @@
+import React from "react";
 import { ProductCard, ProductDetailFrame } from "../../../components/products";
 import { Modal } from "../../../components/ui";
 import useModal from "../../../hooks/useModal";
@@ -8,7 +9,7 @@ interface ProductWishlistProps {
     products: Product[] | [];
 }
 
-const ProductWishlist = ({ products }: ProductWishlistProps) => {
+const ProductWishlistComponent = ({ products }: ProductWishlistProps) => {
     const { openModal, handleCloseModal, handleOpenModal, dataModal } =
         useModal();
 
@@ -31,5 +32,7 @@ const ProductWishlist = ({ products }: ProductWishlistProps) => {
         </>
     );
 };
+
+const ProductWishlist = React.memo(ProductWishlistComponent);
 
 export default ProductWishlist;
